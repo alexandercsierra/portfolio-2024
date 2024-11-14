@@ -5,12 +5,12 @@ import logo from "./assets/portfolio.png";
 import cart from "./assets/cart.svg";
 
 const NavLink = ({
-  linkText,
+  children,
   href,
   isCTA,
   sx = {},
 }: {
-  linkText: string;
+  children: React.ReactNode;
   href: string;
   isCTA?: boolean;
   sx?: SxProps;
@@ -29,6 +29,7 @@ const NavLink = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        cursor: "pointer",
         ...sx,
       }}
     >
@@ -39,7 +40,7 @@ const NavLink = ({
           fontWeight: "700",
         }}
       >
-        {linkText}
+        {children}
       </Typography>
     </Link>
   );
@@ -108,8 +109,12 @@ const Nav = (): JSX.Element => {
         }}
       />
 
-      <NavLink sx={{ marginLeft: 4 }} linkText={"Contact"} href={"/projects"} />
-      <img src={cart} style={{ width: "40px" }} />
+      <NavLink sx={{ marginLeft: 4 }} href={"/projects"}>
+        Contact
+      </NavLink>
+      <NavLink href={"/cart"}>
+        <img src={cart} style={{ width: "40px" }} />
+      </NavLink>
     </Box>
   );
 };
