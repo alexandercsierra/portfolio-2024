@@ -17,9 +17,8 @@ const Home = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        // border: "1px solid red",
-
-        minHeight: "92vh",
+        minHeight: "calc(100vh - 40px)",
+        overflow: "hidden",
       }}
     >
       <Box sx={{ width: "50%", textAlign: "center" }}>
@@ -39,7 +38,7 @@ const AnimatedImage = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsVisible(true);
-    }, 500);
+    }, 300);
   }, []);
 
   return (
