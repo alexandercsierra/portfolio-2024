@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Typography, Link, SxProps } from "@mui/material";
+import { Box, Typography, Link, SxProp, TextField } from "@mui/material";
 import { NavLink as RouterNavLink } from "react-router-dom";
+import logo from "./assets/portfolio.png";
+import cart from "./assets/cart.svg";
 
 const NavLink = ({
   linkText,
@@ -43,31 +45,71 @@ const NavLink = ({
   );
 };
 
+const SearchIcon = () => {
+  return (
+    <Typography
+      sx={{
+        background: "#052D57",
+        p: 1,
+        borderRadius: "100%",
+        fontSize: "12px",
+      }}
+    >
+      🔍
+    </Typography>
+  );
+};
+
 const Nav = (): JSX.Element => {
   return (
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
         paddingRight: "8vw",
-        height: "50px",
+        height: "65px",
         overflow: "hidden",
         top: 0,
         position: "sticky",
         zIndex: 1003,
         margin: 0,
+        background: "#1771DC",
+        py: 1,
+        width: "100%",
       }}
     >
-      <NavLink linkText={"Home"} href={"/"} />
-      <NavLink linkText={"Home"} href={"/"} />
-      <NavLink linkText={"Home"} href={"/"} />
-      <NavLink
-        sx={{ marginLeft: 4 }}
-        isCTA
-        linkText={"Contact"}
-        href={"/projects"}
+      <img src={logo} style={{ width: "150px" }} />
+      {/* <Box
+        sx={{
+          height: "50px",
+          width: "300px",
+          background: "#052D57",
+          borderRadius: "25px",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        <Typography sx={{ p: 1, pl: 3 }}>Hey there</Typography>
+      </Box> */}
+      <TextField
+        sx={{
+          "& .MuiInputBase-root": {
+            width: "550px",
+            height: "50px",
+            borderRadius: "25px",
+            background: "white",
+          },
+        }}
+        placeholder={"What can we help you find?"}
+        InputProps={{
+          endAdornment: <SearchIcon />,
+        }}
       />
+
+      <NavLink sx={{ marginLeft: 4 }} linkText={"Contact"} href={"/projects"} />
+      <img src={cart} style={{ width: "40px" }} />
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import Nav from "./Nav.tsx";
+import Projects from "./Projects.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Box } from "@mui/material";
 
