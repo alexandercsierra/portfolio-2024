@@ -1,11 +1,23 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+import reactLogo from "../assets/react.svg";
 
-const ProductCard = () => {
+const imageMap = {
+  react: reactLogo,
+};
+
+const ProductCard = ({
+  product,
+  addToCart,
+}: {
+  product: { name: string; image?: string; price?: number };
+}) => {
+  const { name, image, price } = product;
   return (
     <Box
       sx={{
         background: "white",
         width: "250px",
+        minWidth: "250px",
         height: "400px",
         borderRadius: "15px",
         m: 2,
@@ -27,12 +39,17 @@ const ProductCard = () => {
         <Box
           sx={{
             m: 1,
-            background: "#e3e0e0",
+            background: "#f4f4f4",
             borderRadius: "15px",
             width: "100%",
             height: "270px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        ></Box>
+        >
+          <img src={imageMap[image]} style={{ width: "100%" }} />
+        </Box>
       </Box>
       <Box
         sx={{
@@ -45,9 +62,9 @@ const ProductCard = () => {
         }}
       >
         <Typography variant={"h6"} sx={{ color: "black" }}>
-          Product Name
+          {name}
         </Typography>
-        <Box
+        <Button
           sx={{
             background: "red",
             width: "70%",
@@ -56,13 +73,14 @@ const ProductCard = () => {
             borderRadius: "25px",
             textAlign: "center",
           }}
+          onClick={() => addToCart(product)}
         >
           <Typography
             sx={{ color: "white", fontWeight: "800", fontSize: ".75rem" }}
           >
             Add to cart
           </Typography>
-        </Box>
+        </Button>
       </Box>
     </Box>
   );
