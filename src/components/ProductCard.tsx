@@ -16,11 +16,12 @@ const ProductCard = ({
 }: {
   product: { name: string; image?: string; price?: number };
 }) => {
-  const { addToCart } = useCart();
+  const { addToCart, removeFromCart } = useCart();
   const [open, setOpen] = useState(false);
   const { name, image, price, description, id, subtitle } = product;
   const cart = useSelector((state) => state.cart.cart);
   const productInCart = cart.some((item) => item.id === id);
+
   return (
     <>
       {" "}
@@ -62,7 +63,7 @@ const ProductCard = ({
             }}
             onClick={(event) => {
               event.stopPropagation();
-              addToCart(product);
+              productInCart ? removeFromCart(product) : addToCart(product);
             }}
           >
             <Typography
@@ -160,7 +161,7 @@ const ProductCard = ({
             }}
             onClick={(event) => {
               event.stopPropagation();
-              addToCart(product);
+              productInCart ? removeFromCart(product) : addToCart(product);
             }}
           >
             <Typography

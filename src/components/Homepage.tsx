@@ -4,6 +4,8 @@ import ImageText from "./ImageText";
 const Homepage = () => {
   return (
     <ImageText
+      maxTitleWidth="500px"
+      maxDescriptionWidth="500px"
       title={"Senior Full Stack Engineer"}
       description={
         "4+ years experience working in fast-paced environments on products serving millions of users"

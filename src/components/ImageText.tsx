@@ -68,6 +68,8 @@ const ImageText = ({
   subCtaLink,
   imagePath,
   imagePos = "right",
+  maxDescriptionWidth = "800px",
+  maxTitleWidth = "800px",
 }: {
   title: string;
   description: string;
@@ -75,6 +77,8 @@ const ImageText = ({
   subCtaLink: { subText: string; subHref: string };
   imagePath: string;
   imagePos: "left" | "right";
+  maxDescriptionWidth?: string;
+  maxTitleWidth?: string;
 }) => {
   return (
     <>
@@ -100,17 +104,33 @@ const ImageText = ({
         >
           <Typography
             variant={"h2"}
-            sx={{ fontWeight: "700", textAlign: { xs: "center", md: "left" } }}
+            sx={{
+              fontWeight: "700",
+              textAlign: { xs: "center", md: "left" },
+              maxWidth: maxTitleWidth,
+            }}
           >
             {title}
           </Typography>
-          <Box sx={{ display: { xs: "none", md: "block" }, maxWidth: "700px" }}>
+          <Box
+            sx={{
+              display: { xs: "none", md: "block" },
+              maxWidth: maxDescriptionWidth,
+            }}
+          >
             <Description desc={description} />
 
             <BrowseCTA ctaLink={ctaLink} subCtaLink={subCtaLink} />
           </Box>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Box sx={{ width: { xs: "300px", md: "500px" } }}>
             <img
               src={imagePath}

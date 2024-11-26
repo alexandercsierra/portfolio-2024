@@ -4,15 +4,33 @@ import { Typography, Box } from "@mui/material";
 import reactLogo from "../assets/react.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
+import CTA from "./CTA";
+
+const EmptyCart = () => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        height: "50vh",
+      }}
+    >
+      <Typography variant={"h4"}>Nothing here yet....</Typography>
+      <CTA href={"/store"} text={"Go Shopping"} />
+    </Box>
+  );
+};
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
 
   return (
-    <Box sx={{ background: "#ececec", minHeight: "100vh", margin: 0 }}>
-      {cart.map((item, idx) => (
-        <CartItem key={idx} item={item} />
-      ))}
+    <Box sx={{ minHeight: "100vh", margin: 0 }}>
+      {cart.length === 0 && <EmptyCart />}
+      {cart.length > 0 &&
+        cart.map((item, idx) => <CartItem key={idx} item={item} />)}
     </Box>
   );
 };

@@ -22,13 +22,14 @@ export const counterSlice = createSlice({
 
       console.log({ existingProductIndex, payload });
 
-      // if the product exists, increase the quantity
-      if (existingProductIndex >= 0) {
-        newCart[existingProductIndex].quantity += 1;
-      } else {
-        // if the product is new, add it to the cart
-        newCart.push({ ...payload, quantity: 1 });
-      }
+      // // if the product exists, increase the quantity
+      // if (existingProductIndex >= 0) {
+      //   newCart[existingProductIndex].quantity += 1;
+      // } else {
+      //   // if the product is new, add it to the cart
+      //   newCart.push({ ...payload, quantity: 1 });
+      // }
+      newCart.push({ ...payload, quantity: 1 });
       localStorage.setItem("cart", JSON.stringify(newCart));
       state.cart = newCart;
     },
@@ -41,11 +42,12 @@ export const counterSlice = createSlice({
         (product) => product.id === payload.id
       );
       const existingProduct = state.cart[existingProductIndex];
-      if (existingProduct.quantity === 1) {
-        newCart.splice(existingProductIndex, 1);
-      } else {
-        newCart[existingProductIndex].quantity -= 1;
-      }
+      // if (existingProduct.quantity === 1) {
+      //   newCart.splice(existingProductIndex, 1);
+      // } else {
+      //   newCart[existingProductIndex].quantity -= 1;
+      // }
+      newCart.splice(existingProductIndex, 1);
       console.log({ existingProductIndex, existingProduct, newCart });
       localStorage.setItem("cart", JSON.stringify(newCart));
       state.cart = newCart;
