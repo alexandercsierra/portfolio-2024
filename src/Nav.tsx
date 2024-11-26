@@ -5,6 +5,7 @@ import logo from "./assets/portfolio.png";
 import cart from "./assets/cart.svg";
 import { useSelector } from "react-redux";
 import Search from "@mui/icons-material/Search";
+import { accentColor } from "./constants/colors";
 
 const NavLink = ({
   children,
@@ -16,7 +17,7 @@ const NavLink = ({
   children: React.ReactNode;
   href: string;
   isCTA?: boolean;
-  sx?: SxProps;
+  sx?: React.CSSProperties;
   showDot?: boolean;
 }): JSX.Element => {
   const cart = useSelector((state) => state.cart.cart);
@@ -35,11 +36,11 @@ const NavLink = ({
       to={href}
       style={{
         textDecoration: "none",
-        color: "white",
-        mx: isCTA ? 2 : 1,
-        my: 1,
-        height: isCTA ? "20px" : "40px",
-        background: isCTA ? "white" : "",
+
+        textTransform: "none",
+        color: "black",
+        height: isCTA ? "30px" : "40px",
+        background: isCTA ? accentColor : "",
         borderRadius: isCTA ? "25px" : "",
         display: "flex",
         justifyContent: "center",
@@ -64,8 +65,10 @@ const NavLink = ({
       )}
       <Typography
         sx={{
-          color: isCTA ? "black" : "",
-          textTransform: "uppercase",
+          color: isCTA ? "white" : "",
+          textTransform: "none",
+          paddingX: isCTA ? "25px" : "",
+
           fontWeight: "700",
         }}
       >
@@ -97,25 +100,25 @@ const Nav = (): JSX.Element => {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         alignItems: "center",
-        paddingRight: "8vw",
+        // paddingRight: "8vw",
         height: "65px",
         overflow: "hidden",
         top: 0,
         position: "sticky",
         zIndex: 1003,
         margin: 0,
-        background: "#3E8DC6",
+        // background: "#3E8DC6",
+        px: 2,
         py: 1,
-        width: "100%",
-        boxShadow:
-          "rgba(0, 0, 0, 0.04) 0px -1px 2px, rgba(0, 0, 0, 0.04) 0px 1px 2px, rgba(0, 0, 0, 0.04) 0px 3px 4px",
+        // width: "100%",
+        // border: "1px solid red",
+        // boxShadow:
+        // "rgba(0, 0, 0, 0.04) 0px -1px 2px, rgba(0, 0, 0, 0.04) 0px 1px 2px, rgba(0, 0, 0, 0.04) 0px 3px 4px",
       }}
     >
-      <NavLink href={"/"}>
-        <img src={logo} style={{ width: "150px" }} />
-      </NavLink>
+      <NavLink href={"/"}>Alexander Sierra</NavLink>
       {/* <Box
         sx={{
           height: "50px",
@@ -129,7 +132,7 @@ const Nav = (): JSX.Element => {
       >
         <Typography sx={{ p: 1, pl: 3 }}>Hey there</Typography>
       </Box> */}
-      <TextField
+      {/* <TextField
         sx={{
           "& .MuiInputBase-root": {
             width: "550px",
@@ -142,14 +145,41 @@ const Nav = (): JSX.Element => {
         InputProps={{
           endAdornment: <SearchIcon />,
         }}
-      />
-
-      <NavLink sx={{ marginLeft: 4 }} href={"/projects"}>
-        Contact
-      </NavLink>
-      <NavLink href={"/cart"} showDot>
-        <img src={cart} style={{ width: "40px" }} />
-      </NavLink>
+      /> */}
+      <Box
+        gap={6}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          // width: "80%",
+        }}
+      >
+        <NavLink sx={{ marginLeft: 4 }} href={"/about"}>
+          About
+        </NavLink>
+        <NavLink sx={{ marginLeft: 4 }} href={"/resume"}>
+          Resume
+        </NavLink>
+        <NavLink sx={{ marginLeft: 4 }} href={"/projects"}>
+          Projects
+        </NavLink>
+        <NavLink sx={{ marginLeft: 4 }} href={"/store"}>
+          Store
+        </NavLink>
+      </Box>
+      <Box sx={{ display: "flex" }}>
+        <NavLink href={"/cart"} showDot>
+          <img src={cart} style={{ width: "40px", color: "black" }} />
+        </NavLink>
+        <NavLink
+          sx={{ marginLeft: "20px" }}
+          href={"mailto:alexandercsierra@gmail.com"}
+          isCTA
+        >
+          Hire me
+        </NavLink>
+      </Box>
     </Box>
   );
 };

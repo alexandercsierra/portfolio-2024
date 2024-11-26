@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Profile circle and photo placeholder -->
+  <circle cx="100" cy="80" r="30" fill="none" stroke="white" stroke-width="4"/>
+  <line x1="100" y1="130" x2="100" y2="180" stroke="white" stroke-width="4"/>
+  <line x1="70" y1="150" x2="130" y2="150" stroke="white" stroke-width="4"/>
+  
+  <!-- Name header line -->
+  <rect x="160" y="50" width="200" height="8" fill="none" stroke="white" stroke-width="4"/>
+  
+  <!-- Contact info lines -->
+  <line x1="160" y1="80" x2="320" y2="80" stroke="white" stroke-width="2"/>
+  <line x1="160" y1="100" x2="280" y2="100" stroke="white" stroke-width="2"/>
+  
+  <!-- Experience section -->
+  <rect x="50" y="200" width="300" height="40" fill="none" stroke="white" stroke-width="4"/>
+  <line x1="70" y1="260" x2="330" y2="260" stroke="white" stroke-width="2"/>
+  <line x1="70" y1="280" x2="330" y2="280" stroke="white" stroke-width="2"/>
+  
+  <!-- Skills section -->
+  <rect x="50" y="320" width="300" height="40" fill="none" stroke="white" stroke-width="4"/>
+  
+  <!-- Skill dots -->
+  <circle cx="80" cy="380" r="5" fill="white"/>
+  <circle cx="100" cy="380" r="5" fill="white"/>
+  <circle cx="120" cy="380" r="5" fill="white"/>
+</svg>

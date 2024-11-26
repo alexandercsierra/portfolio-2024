@@ -3,30 +3,13 @@ import reactLogo from "./assets/portfolio.png";
 import ProductCard from "./components/ProductCard";
 import { useDispatch } from "react-redux";
 import { addToCart as addToCartRedux } from "./redux/cartSlice";
-
-const products = [
-  {
-    id: "react",
-    name: "React",
-    image: "react",
-    desc: "Skills in frontend react",
-  },
-  {
-    id: "es6",
-    name: "ES6",
-    image: "react",
-    desc: "Skills in frontend react",
-  },
-  {
-    id: "nodejs",
-    name: "Node JS",
-    image: "react",
-    desc: "Skills in frontend react",
-  },
-];
+import resumeIcon from "./assets/resume-icon.svg";
+import { NavLink } from "react-router-dom";
+import { products } from "./constants/productData";
+import Homepage from "./components/Homepage";
 
 function App() {
-  return <NewHome />;
+  return <Homepage />;
 }
 
 export default App;
@@ -63,6 +46,47 @@ const Banner = () => {
   );
 };
 
+const SmallBanner = ({ mainTitle, subtitle, path }) => {
+  return (
+    <Box
+      sx={{
+        cursor: "pointer",
+        background: "#4562AD",
+        height: "250px",
+        width: "40%",
+        m: 2,
+        mx: 5,
+        display: "flex",
+        // flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "15px",
+        px: 10,
+        gap: 4,
+        boxShadow: "none", // Initial state
+        transition: "box-shadow .6s ease", // Add transition
+        "&:hover": {
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        },
+      }}
+    >
+      <NavLink to={path} style={{ textDecoration: "none", width: "100%" }}>
+        <Box>
+          <Typography
+            variant={"h3"}
+            color={"white"}
+            sx={{ fontWeight: "700", fontSize: "2.5rem" }}
+          >
+            {mainTitle}
+          </Typography>
+          <Typography sx={{ color: "white" }}>{subtitle}</Typography>
+        </Box>
+        <img src={resumeIcon} style={{ width: "150px" }} />
+      </NavLink>
+    </Box>
+  );
+};
+
 const NewHome = () => {
   const dispatch = useDispatch();
 
@@ -74,50 +98,27 @@ const NewHome = () => {
     <Box>
       <Banner />
       <Box
-        style={{
+        sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          my: 5,
         }}
       >
-        <Box
-          sx={{
-            background: "#4562AD",
-            height: "250px",
-            width: "40%",
-            m: 2,
-            mx: 5,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            borderRadius: "15px",
-            px: 10,
-          }}
-        >
-          <Typography
-            variant={"h3"}
-            color={"white"}
-            sx={{ fontWeight: "700", fontSize: "2.5rem" }}
-          >
-            50% off
-          </Typography>
-          <Typography sx={{ color: "white" }}>Full stack developing</Typography>
-        </Box>
-        <Box
-          sx={{
-            background: "#4562AD",
-            height: "250px",
-            width: "40%",
-            m: 2,
-            mx: 5,
-            display: "flex",
-            borderRadius: "15px",
-            flexDirection: "column",
-            justifyContent: "center",
-            px: 10,
-          }}
-        ></Box>
+        <SmallBanner
+          mainTitle={"Resume"}
+          subtitle={"4+ years full stack experience"}
+          path="/resume"
+        />
+        <SmallBanner
+          mainTitle={"Projects"}
+          subtitle={"Full stack projects"}
+          path="/projects"
+        />
       </Box>
+      <Typography mt={3} variant={"h4"} textAlign={"center"}>
+        Skills for Sale
+      </Typography>
       <Box
         sx={{
           display: "flex",
@@ -127,59 +128,15 @@ const NewHome = () => {
           width: "100%",
           background: "#f7f7f7",
           overflowX: "auto",
+          py: 4,
         }}
       >
         {products.map((product) => (
           <ProductCard addToCart={addToCart} product={product} />
         ))}
-        {/* <ProductCard
-          addToCart={addToCart}
-          product={{
-            name: "React",
-            image: "react",
-            desc: "Skills in frontend react",
-          }}
-        />
-        <ProductCard
-          addToCart={addToCart}
-          product={{
-            name: "TypeScript",
-            image: "react",
-            desc: "Skills in frontend react",
-          }}
-        />
-
-        <ProductCard
-          addToCart={addToCart}
-          product={{
-            name: "Node JS",
-            image: "react",
-            desc: "Skills in frontend react",
-          }}
-        />
-
-        <ProductCard
-          addToCart={addToCart}
-          product={{
-            name: "GraphQL",
-            image: "react",
-            desc: "Skills in frontend react",
-          }}
-        />
-        <ProductCard
-          addToCart={addToCart}
-          product={{ name: "ES6", image: "react" }}
-        />
-        <ProductCard
-          addToCart={addToCart}
-          product={{
-            name: "Material UI",
-            image: "react",
-            desc: "Skills in frontend react",
-          }}
-        /> */}
       </Box>
-      <Footer />
+
+      {/* <Footer /> */}
     </Box>
   );
 };
@@ -188,13 +145,13 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        // background: "#052D57",
+        background: "#3E8DC6",
         // height: "40px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        border: "1px solid red",
+        color: "white",
         pt: 2,
       }}
     >
