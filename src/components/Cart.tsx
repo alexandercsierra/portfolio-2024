@@ -9,6 +9,7 @@ import CTA from "./CTA";
 const EmptyCart = () => {
   return (
     <Box
+      gap={3}
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -17,8 +18,13 @@ const EmptyCart = () => {
         height: "50vh",
       }}
     >
-      <Typography variant={"h4"}>Nothing here yet....</Typography>
-      <CTA href={"/store"} text={"Go Shopping"} />
+      <Typography variant={"h3"}>Nothing here yet....</Typography>
+      <Typography>try adding more skills from the shop page</Typography>
+      <CTA
+        href={"/store"}
+        text={"Go Shopping"}
+        style={{ height: "20px", width: "200px" }}
+      />
     </Box>
   );
 };
@@ -27,10 +33,59 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
 
   return (
-    <Box sx={{ minHeight: "100vh", margin: 0 }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        margin: 0,
+        backgroundImage: "linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)",
+      }}
+    >
       {cart.length === 0 && <EmptyCart />}
-      {cart.length > 0 &&
-        cart.map((item, idx) => <CartItem key={idx} item={item} />)}
+      {cart.length > 0 && (
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              width: "70%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {cart.map((item, idx) => (
+              <CartItem key={idx} item={item} />
+            ))}
+          </Box>
+          <Box
+            sx={{
+              backgroundColor: "white",
+              m: 2,
+              p: 2,
+              height: "fit-content",
+              minHeight: "500px",
+              borderRadius: "25px",
+              position: "fixed",
+              right: "0",
+            }}
+          >
+            <Typography>Subtotal</Typography>
+            <Typography>Shipping</Typography>
+            <Typography>Total</Typography>
+            <CTA
+              href={"/checkout"}
+              text={"Check Out"}
+              style={{ padding: "5px 10px", mt: 4 }}
+            />
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };
@@ -41,7 +96,8 @@ const CartItem = ({ item }) => {
   return (
     <Box
       sx={{
-        height: "200px",
+        height: "150px",
+        width: "80%",
         m: 2,
         display: "flex",
         justifyContent: "flex-start",

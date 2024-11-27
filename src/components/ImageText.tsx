@@ -2,17 +2,17 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { accentColor } from "../constants/colors";
-import selfie from "../assets/transprofile.png";
+import TextWithBold from "./TextWithBold";
 
 const BrowseCTA = ({
   ctaLink,
   subCtaLink,
 }: {
   ctaLink: { text: string; href: string };
-  subCtaLink: { subText: string; subHref: string };
+  subCtaLink: { subText: string; subHref: string; isExternal?: boolean };
 }) => {
   const { text, href } = ctaLink;
-  const { subText, subHref } = subCtaLink;
+  const { subText, subHref, isExternal } = subCtaLink;
   return (
     <Box
       sx={{
@@ -50,7 +50,11 @@ const BrowseCTA = ({
           {text}
         </NavLink>
       </Box>
-      <NavLink to={subHref} style={{ fontSize: ".8rem", color: "black" }}>
+      <NavLink
+        target={isExternal ? "_blank" : ""}
+        to={subHref}
+        style={{ fontSize: ".8rem", color: "black" }}
+      >
         {subText}
       </NavLink>
     </Box>
@@ -58,7 +62,18 @@ const BrowseCTA = ({
 };
 
 const Description = ({ desc }: { desc: string }) => {
-  return <Typography sx={{ my: 4 }}>{desc}</Typography>;
+  return (
+    <>
+      {desc.split("\n").map((text) => {
+        console.log({ text });
+        return (
+          <Box sx={{ my: 2 }}>
+            <TextWithBold text={text} />
+          </Box>
+        );
+      })}
+    </>
+  );
 };
 
 const ImageText = ({
@@ -70,6 +85,7 @@ const ImageText = ({
   imagePos = "right",
   maxDescriptionWidth = "800px",
   maxTitleWidth = "800px",
+  imgStyles = {},
 }: {
   title: string;
   description: string;
@@ -79,6 +95,7 @@ const ImageText = ({
   imagePos: "left" | "right";
   maxDescriptionWidth?: string;
   maxTitleWidth?: string;
+  imgStyles?: React.CSSProperties;
 }) => {
   return (
     <>
@@ -110,7 +127,15 @@ const ImageText = ({
               maxWidth: maxTitleWidth,
             }}
           >
-            {title}
+            {title.split("\n").map((text) => {
+              console.log({ text });
+              return (
+                <Box>
+                  <TextWithBold text={text} />
+                </Box>
+              );
+            })}
+            {/* <TextWithBold text={title} /> */}
           </Typography>
           <Box
             sx={{
@@ -139,6 +164,7 @@ const ImageText = ({
                 borderRadius: "80%",
                 // border: "1px solid red",
                 background: accentColor,
+                ...imgStyles,
               }}
             />
           </Box>

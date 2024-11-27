@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, SxProps, TextField } from "@mui/material";
-import { NavLink as Link } from "react-router-dom";
-import logo from "./assets/portfolio.png";
+import { Box, Typography } from "@mui/material";
+import { NavLink as Link, useLocation } from "react-router-dom";
 import cart from "./assets/cart.svg";
 import { useSelector } from "react-redux";
-import Search from "@mui/icons-material/Search";
-import { accentColor } from "./constants/colors";
+import { accentColor, blue } from "./constants/colors";
+import { resumeLink } from "./constants/otherData";
+import CartIcon from "./components/CartIcon";
+
+const navLinks = [
+  { text: "Skills Shop", href: "/store" },
+  { text: "Projects", href: "/projects" },
+  { text: "About", href: "/about" },
+  {
+    text: "Resume",
+    href: resumeLink,
+    isExternal: true,
+  },
+];
 
 const NavLink = ({
   children,
@@ -13,13 +24,19 @@ const NavLink = ({
   isCTA,
   showDot = false,
   sx = {},
+  isExternal = false,
 }: {
   children: React.ReactNode;
   href: string;
   isCTA?: boolean;
   sx?: React.CSSProperties;
   showDot?: boolean;
+  isExternal?: boolean;
 }): JSX.Element => {
+  const location = useLocation();
+  const { pathname } = location;
+  const isCurrentLocation = pathname === href;
+
   const cart = useSelector((state) => state.cart.cart);
 
   const [showCartDot, setShowCartDot] = useState(showDot && cart.length > 0);
@@ -34,6 +51,7 @@ const NavLink = ({
   return (
     <Link
       to={href}
+      target={isExternal ? "_blank" : ""}
       style={{
         textDecoration: "none",
 
@@ -47,6 +65,7 @@ const NavLink = ({
         alignItems: "center",
         cursor: "pointer",
         position: "relative",
+
         ...sx,
       }}
     >
@@ -65,33 +84,21 @@ const NavLink = ({
       )}
       <Typography
         sx={{
-          color: isCTA ? "white" : "",
+          color: isCTA ? "white" : isCurrentLocation ? accentColor : "",
           textTransform: "none",
           paddingX: isCTA ? "25px" : "",
 
           fontWeight: "700",
+
+          transition: "color .4s ease", // Add transition
+          "&:hover": {
+            color: blue,
+          },
         }}
       >
         {children}
       </Typography>
     </Link>
-  );
-};
-
-const SearchIcon = () => {
-  return (
-    <Box
-      sx={{
-        background: "#27277e",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: "100%",
-        p: 0.5,
-      }}
-    >
-      <Search sx={{ p: 0, m: 0, color: "white", fontSize: "25px" }} />
-    </Box>
   );
 };
 
@@ -102,75 +109,34 @@ const Nav = (): JSX.Element => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        // paddingRight: "8vw",
         height: "65px",
         overflow: "hidden",
         top: 0,
         position: "sticky",
         zIndex: 1003,
         margin: 0,
-        // background: "#3E8DC6",
         px: 2,
         py: 1,
-        // width: "100%",
-        // border: "1px solid red",
-        // boxShadow:
-        // "rgba(0, 0, 0, 0.04) 0px -1px 2px, rgba(0, 0, 0, 0.04) 0px 1px 2px, rgba(0, 0, 0, 0.04) 0px 3px 4px",
       }}
     >
       <NavLink href={"/"}>Alexander Sierra</NavLink>
-      {/* <Box
-        sx={{
-          height: "50px",
-          width: "300px",
-          background: "#052D57",
-          borderRadius: "25px",
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}
-      >
-        <Typography sx={{ p: 1, pl: 3 }}>Hey there</Typography>
-      </Box> */}
-      {/* <TextField
-        sx={{
-          "& .MuiInputBase-root": {
-            width: "550px",
-            height: "50px",
-            borderRadius: "25px",
-            background: "white",
-          },
-        }}
-        placeholder={"What can we help you find?"}
-        InputProps={{
-          endAdornment: <SearchIcon />,
-        }}
-      /> */}
       <Box
         gap={6}
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // width: "80%",
         }}
       >
-        <NavLink sx={{ marginLeft: 4 }} href={"/about"}>
-          About
-        </NavLink>
-        <NavLink sx={{ marginLeft: 4 }} href={"/resume"}>
-          Resume
-        </NavLink>
-        <NavLink sx={{ marginLeft: 4 }} href={"/projects"}>
-          Projects
-        </NavLink>
-        <NavLink sx={{ marginLeft: 4 }} href={"/store"}>
-          Store
-        </NavLink>
+        {navLinks.map(({ text, href, isExternal }) => (
+          <NavLink sx={{ marginLeft: 4 }} href={href} isExternal={isExternal}>
+            {text}
+          </NavLink>
+        ))}
       </Box>
       <Box sx={{ display: "flex" }}>
         <NavLink href={"/cart"} showDot>
-          <img src={cart} style={{ width: "40px", color: "black" }} />
+          <CartIcon color={"#707070"} />
         </NavLink>
         <NavLink
           sx={{ marginLeft: "20px" }}

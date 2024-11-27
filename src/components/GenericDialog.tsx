@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { SxProps } from "@mui/system";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export interface IGenericModalProps {
   id: string;
@@ -58,7 +59,7 @@ const GenericDialog = ({
           boxSizing: "border-box",
           borderRadius: "25px",
           border: "2px solid #000",
-          width: "50rem",
+          width: "600px",
           boxShadow: { xs: "6px 6px 0px #000000", sm: "8px 8px 0px #000000" },
           padding: { xs: 1.5, sm: 3, md: 4 },
           ...paperStyles,
@@ -73,7 +74,7 @@ const GenericDialog = ({
         {showCloseButton && (
           <Box display="flex" alignItems="center" width="100%">
             <IconButton onClick={onCancel} sx={{ marginLeft: "auto" }}>
-              x
+              <HighlightOffIcon sx={{ color: "black" }} />
             </IconButton>
           </Box>
         )}

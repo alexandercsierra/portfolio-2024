@@ -2,7 +2,15 @@ import { Box } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { accentColor } from "../constants/colors";
 
-const CTA = ({ href, text }: { href: string; text: string }) => {
+const CTA = ({
+  href,
+  text,
+  style = {},
+}: {
+  href: string;
+  text: string;
+  style: React.CSSProperties;
+}) => {
   return (
     <Box
       sx={{
@@ -18,6 +26,7 @@ const CTA = ({ href, text }: { href: string; text: string }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        ...style,
       }}
     >
       <NavLink
