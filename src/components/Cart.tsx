@@ -5,6 +5,7 @@ import reactLogo from "../assets/react.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
 import CTA from "./CTA";
+import { productImageMap } from "../constants/productData";
 
 const EmptyCart = () => {
   return (
@@ -15,7 +16,15 @@ const EmptyCart = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        height: "50vh",
+        // height: "50vh",
+        background: "white",
+        width: "50%",
+        height: "300px",
+        borderRadius: "25px",
+        padding: 4,
+        mt: 6,
+        // padding: "50px auto",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
       }}
     >
       <Typography variant={"h3"}>Nothing here yet....</Typography>
@@ -35,9 +44,12 @@ const Cart = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: "85vh",
         margin: 0,
         backgroundImage: "linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)",
+        display: "flex",
+        justifyContent: "center",
+        // alignItems: "center",
       }}
     >
       {cart.length === 0 && <EmptyCart />}
@@ -75,9 +87,23 @@ const Cart = () => {
               right: "0",
             }}
           >
-            <Typography>Subtotal</Typography>
-            <Typography>Shipping</Typography>
-            <Typography>Total</Typography>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography>Subtotal:</Typography>
+              <Typography>$117.85</Typography>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography>Shipping:</Typography>
+              <Typography>FREE</Typography>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography>Taxes and Fees:</Typography>
+              <Typography>$34.22</Typography>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography>Total:</Typography>
+              <Typography>$151.00</Typography>
+            </Box>
+
             <CTA
               href={"/checkout"}
               text={"Check Out"}
@@ -108,7 +134,7 @@ const CartItem = ({ item }) => {
       }}
     >
       <Box sx={{ width: "200px" }}>
-        <img src={reactLogo} style={{ width: "150px" }} />
+        <img src={productImageMap[item.image]} style={{ width: "150px" }} />
       </Box>
       <Box
         sx={{
@@ -120,10 +146,10 @@ const CartItem = ({ item }) => {
           width: "60%",
         }}
       >
-        <Typography variant={"h3"}>{item.name}</Typography>
-        <Typography>{item.desc}</Typography>
-        <Typography>In stock</Typography>
-        <Typography>FREE delivery</Typography>
+        <Typography variant={"h4"}>{item.name}</Typography>
+        <Typography>{item.subtitle}</Typography>
+        <Typography variant={"caption"}>In stock</Typography>
+        <Typography variant={"caption"}>FREE delivery</Typography>
         <CartItemToolbar product={item} />
       </Box>
       <Box
@@ -133,9 +159,9 @@ const CartItem = ({ item }) => {
           alignItems: "center",
         }}
       >
-        <Typography>{item.price || "$25.32"}</Typography>
+        <Typography>{item.price ? `$${item.price}` : "$25.32"}</Typography>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           justifyContent: "flex-start",
@@ -144,7 +170,7 @@ const CartItem = ({ item }) => {
         }}
       >
         <Typography>x{item.quantity}</Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
@@ -154,16 +180,14 @@ const CartItemToolbar = ({ product }) => {
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
       <Typography
-        sx={{ cursor: "pointer" }}
+        variant={"caption"}
+        sx={{ cursor: "pointer", textDecoration: "underline" }}
         onClick={() => {
           dispatch(removeFromCart(product));
         }}
       >
         Remove
       </Typography>
-      <Typography>|</Typography>
-      <Typography>Save for later</Typography>
-      <Typography>|</Typography>
     </Box>
   );
 };

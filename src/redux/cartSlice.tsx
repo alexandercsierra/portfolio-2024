@@ -5,8 +5,8 @@ const initialCart = cartFromLocalStorage
   ? JSON.parse(cartFromLocalStorage)
   : [];
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const cartSlice = createSlice({
+  name: "cart",
   initialState: {
     cart: initialCart,
   },
@@ -56,6 +56,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, removeFromCart } = counterSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
-export default counterSlice.reducer;
+export default cartSlice.reducer;

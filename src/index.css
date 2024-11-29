@@ -107,3 +107,12 @@ nav {
 #menu:checked ~ nav {
   height: 40vh;
 }
+
+.cartIcon {
+  stroke: #707070;
+  transition: stroke 0.3s ease;
+}
+
+.cartIcon:hover {
+  stroke: #584db9;
+}

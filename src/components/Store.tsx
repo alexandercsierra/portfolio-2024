@@ -1,10 +1,13 @@
 import ProductCard from "./ProductCard";
 import { Box, Typography } from "@mui/material";
 import { products } from "../constants/productData";
-import { lightBlue } from "../constants/colors";
 import transProfile from "../assets/transprofile.png";
+import { grey, lightGrey } from "../constants/colors";
 
 const Store = () => {
+  const productCategories = new Set(
+    products.map((product) => product.category)
+  );
   return (
     <Box
       sx={{
@@ -47,8 +50,7 @@ const Store = () => {
               fontSize: { xs: "2rem", sm: "3rem", md: "3.75rem" },
             }}
           >
-            Dev experience across
-            <br /> the whole stack?
+            Dev experience across the whole stack?
           </Typography>
           <Typography
             variant="h4"
@@ -66,7 +68,38 @@ const Store = () => {
       <Typography variant="h3" sx={{ fontWeight: "700", mt: 4 }}>
         Skills
       </Typography>
-      <Box
+      <Box sx={{ width: "100%" }}>
+        {Array.from(productCategories).map((category) => {
+          return (
+            <Box sx={{ background: lightGrey, padding: 2, my: 4 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: "700",
+                  color: "black",
+                  mt: 2,
+                  textTransform: "capitalize",
+                }}
+              >
+                {category} skills
+              </Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                {products
+                  .filter((prod) => prod.category === category)
+                  .map((product) => {
+                    return (
+                      <ProductCard
+                        addToCart={() => console.log("add to cart")}
+                        product={product}
+                      />
+                    );
+                  })}
+              </Box>
+            </Box>
+          );
+        })}
+      </Box>
+      {/* <Box
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -82,7 +115,7 @@ const Store = () => {
             />
           );
         })}
-      </Box>
+      </Box> */}
     </Box>
   );
 };

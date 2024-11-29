@@ -136,8 +136,9 @@ const Nav = (): JSX.Element => {
       </Box>
       <Box sx={{ display: "flex" }}>
         <NavLink href={"/cart"} showDot>
-          <CartIcon color={"#707070"} />
+          <CartIcon />
         </NavLink>
+
         <NavLink
           sx={{ marginLeft: "20px" }}
           href={"mailto:alexandercsierra@gmail.com"}

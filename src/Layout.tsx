@@ -45,7 +45,7 @@ const RootLayout = () => {
       </head>
       <Box
         sx={{
-          minHeight: `calc(100vh - ${footerHeight}px)`,
+          minHeight: `calc(100vh - ${footerHeight}px - 45px)`,
           maxWidth: "100%",
           overflowX: "hidden",
         }}

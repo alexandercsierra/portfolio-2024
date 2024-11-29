@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { accentColor } from "../constants/colors";
+import { accentColor, darkAccent } from "../constants/colors";
 
 const CTA = ({
   href,
@@ -26,6 +26,13 @@ const CTA = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        transition: ".6s ease",
+        "&:hover": {
+          cursor: "pointer",
+          background: darkAccent,
+          color: "white",
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        },
         ...style,
       }}
     >

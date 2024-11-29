@@ -53,12 +53,13 @@ const GenericDialog = ({
         style: {
           maxWidth: "none",
           backgroundImage: `url(${backgroundImgPath})`,
+
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           margin: { xs: "0 auto", sm: "inherit" },
           boxSizing: "border-box",
           borderRadius: "25px",
-          border: "2px solid #000",
+          // border: "2px solid #000",
           width: "600px",
           boxShadow: { xs: "6px 6px 0px #000000", sm: "8px 8px 0px #000000" },
           padding: { xs: 1.5, sm: 3, md: 4 },

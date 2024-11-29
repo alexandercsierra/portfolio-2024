@@ -12,6 +12,8 @@ import Resume from "./Resume.tsx";
 import ProductPage from "./components/ProductPage.tsx";
 import About from "./components/About.tsx";
 import Store from "./components/Store.tsx";
+import NotFound from "./components/NotFound.tsx";
+import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
 
 const router = createBrowserRouter([
   {
@@ -24,14 +26,20 @@ const router = createBrowserRouter([
       { path: "/product/:productId", element: <ProductPage /> },
       { path: "/about", element: <About /> },
       { path: "/store", element: <Store /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <SnackbarProvider
+      maxSnack={3}
+      anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+    >
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </SnackbarProvider>
   </StrictMode>
 );

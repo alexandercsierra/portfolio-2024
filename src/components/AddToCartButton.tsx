@@ -4,6 +4,7 @@ import { accentColor } from "../constants/colors";
 import useCart from "../hooks/useCart";
 import { useSelector } from "react-redux";
 import Snackbar from "./Snackbar";
+import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
 
 const AddToCartButton = ({
   product,
@@ -15,24 +16,17 @@ const AddToCartButton = ({
   buttonWidth?: string;
 }) => {
   const { addToCart, removeFromCart } = useCart();
+  const { enqueueSnackbar } = useSnackbar();
   const { id } = product;
   const cart = useSelector((state) => state.cart.cart);
   const productInCart = cart.some((item) => item.id === id);
 
-  const [open, setOpen] = useState(false);
-
-  const snackbarMessage = productInCart
+  const snackbarMessage = !productInCart
     ? `Added ${product.name} to cart`
     : `Removed ${product.name} from cart`;
 
   return (
     <>
-      <Snackbar
-        open={open}
-        setOpen={setOpen}
-        message={snackbarMessage}
-        severity={productInCart ? "success" : "error"}
-      />
       <Button
         size={buttonSize}
         sx={{
@@ -44,7 +38,9 @@ const AddToCartButton = ({
         }}
         onClick={(event) => {
           event.stopPropagation();
-          setOpen(true);
+          enqueueSnackbar(snackbarMessage, {
+            variant: productInCart ? "error" : "success",
+          });
           productInCart ? removeFromCart(product) : addToCart(product);
         }}
       >
