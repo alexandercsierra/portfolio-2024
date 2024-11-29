@@ -13,7 +13,7 @@ import ProductPage from "./components/ProductPage.tsx";
 import About from "./components/About.tsx";
 import Store from "./components/Store.tsx";
 import NotFound from "./components/NotFound.tsx";
-import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
+import { SnackbarProvider } from "notistack";
 
 const router = createBrowserRouter([
   {

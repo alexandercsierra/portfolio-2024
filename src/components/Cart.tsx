@@ -1,7 +1,4 @@
-import React from "react";
-import { getCartFromLS } from "../hooks/useCart";
 import { Typography, Box } from "@mui/material";
-import reactLogo from "../assets/react.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
 import CTA from "./CTA";

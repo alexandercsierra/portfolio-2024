@@ -1,5 +1,4 @@
 // NotFound.tsx
-import { Link } from "react-router-dom";
 import ImageText from "./ImageText";
 import jasper from "../assets/jasper.png";
 

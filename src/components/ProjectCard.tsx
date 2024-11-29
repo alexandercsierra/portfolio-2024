@@ -11,7 +11,6 @@ const imageMap = {
 
 const ProjectCard = ({
   title,
-  description,
   id,
   url,
   backgroundColor = "",
@@ -20,7 +19,6 @@ const ProjectCard = ({
   descArr = [],
 }: {
   title: string;
-  description: string;
   id: string;
   url: string;
   backgroundColor?: string;

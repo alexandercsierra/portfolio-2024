@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Typography, Button } from "@mui/material";
 import { accentColor } from "../constants/colors";
 import useCart from "../hooks/useCart";
 import { useSelector } from "react-redux";
-import Snackbar from "./Snackbar";
-import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 
 const AddToCartButton = ({
   product,
@@ -41,7 +39,7 @@ const AddToCartButton = ({
           enqueueSnackbar(snackbarMessage, {
             variant: productInCart ? "error" : "success",
           });
-          productInCart ? removeFromCart(product) : addToCart(product);
+          return productInCart ? removeFromCart(product) : addToCart(product);
         }}
       >
         <Typography

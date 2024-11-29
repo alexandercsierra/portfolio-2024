@@ -1,8 +1,6 @@
-// RootLayout.tsx
-import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Nav, { MobileNav } from "./Nav";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from "./components/Footer";
 import { footerHeight } from "./constants/otherData";
 

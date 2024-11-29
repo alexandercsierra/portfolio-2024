@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { NavLink as Link, useLocation } from "react-router-dom";
-import cart from "./assets/cart.svg";
 import { useSelector } from "react-redux";
 import { accentColor, blue } from "./constants/colors";
 import { resumeLink } from "./constants/otherData";
@@ -167,28 +166,7 @@ export const MobileNav = () => {
 
   return (
     <>
-      <div
-        className="nav"
-        style={
-          {
-            // border: "1px solid red",
-          }
-        }
-      >
-        {/* {!checked && (
-          <Box sx={{ display: "flex", alignItems: "center", pt: 1 }}>
-            <NavLink
-              sx={{ marginLeft: "20px" }}
-              href={"mailto:alexandercsierra@gmail.com"}
-              isCTA
-            >
-              Hire me
-            </NavLink>
-            <NavLink href={"/cart"} showDot>
-              <CartIcon />
-            </NavLink>
-          </Box>
-        )} */}
+      <div className="nav">
         <input
           type="checkbox"
           className="blue"

@@ -7,10 +7,16 @@ import { productImageMap } from "../constants/productData";
 const ProductCard = ({
   product,
 }: {
-  product: { name: string; image?: string; price?: number };
+  product: {
+    name: string;
+    image?: string;
+    description?: string;
+    subtitle: string;
+    price?: number;
+  };
 }) => {
   const [open, setOpen] = useState(false);
-  const { name, image, price, description, id, subtitle } = product;
+  const { name, image, price, description, subtitle } = product;
 
   return (
     <>
