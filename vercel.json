@@ -1,17 +1,13 @@
 {
-  "ignoreCommand": true,
-  "typescript": {
-    "ignoreBuildErrors": true
-  },
-  "eslint": {
-    "ignoreBuildErrors": true
-  },
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "eslint": {
+          "ignoreBuildErrors": true
+        },
+        "typescript": {
           "ignoreBuildErrors": true
         }
       }
