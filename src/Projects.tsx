@@ -23,7 +23,7 @@ const Projects = () => {
       {/* <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}> */}
       {/* <Masonry> */}
       <Typography
-        variant={"h1"}
+        variant={"h2"}
         sx={{ textAlign: "center", my: 4, fontWeight: "800" }}
       >
         My Work

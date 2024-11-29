@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { accentColor } from "../constants/colors";
+import { accentColor, darkAccent } from "../constants/colors";
 import TextWithBold from "./TextWithBold";
 
 const BrowseCTA = ({
@@ -22,34 +22,41 @@ const BrowseCTA = ({
         alignItems: "center",
       }}
     >
-      <Box
-        sx={{
-          background: accentColor,
-          color: "white",
-          borderRadius: "25px",
-          textTransform: "none",
-          fontWeight: "700",
-          width: "300px",
-          px: 6,
-          py: 1,
-          mb: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+      <NavLink
+        to={href}
+        style={{
+          color: "inherit",
+          textAlign: "center",
+          textDecoration: "none",
+          padding: "inherit",
         }}
       >
-        <NavLink
-          to={href}
-          style={{
-            color: "inherit",
-            textAlign: "center",
-            textDecoration: "none",
-            padding: "inherit",
+        <Box
+          sx={{
+            background: accentColor,
+            color: "white",
+            borderRadius: "25px",
+            textTransform: "none",
+            fontWeight: "700",
+            width: "300px",
+            px: 6,
+            py: 1,
+            mb: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            transition: ".6s ease",
+            "&:hover": {
+              cursor: "pointer",
+              background: darkAccent,
+              color: "white",
+              boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+            },
           }}
         >
           {text}
-        </NavLink>
-      </Box>
+        </Box>
+      </NavLink>
       <NavLink
         target={isExternal ? "_blank" : ""}
         to={subHref}
