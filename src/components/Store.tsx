@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 import { Box, Typography } from "@mui/material";
 import { products } from "../constants/productData";
 import transProfile from "../assets/transprofile.png";
-import { grey, lightGrey } from "../constants/colors";
+import { lightGrey } from "../constants/colors";
 
 const Store = () => {
   const productCategories = new Set(
@@ -40,7 +40,7 @@ const Store = () => {
             "linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%)",
         }}
       >
-        <Box sx={{ px: { xs: 0, md: 15 } }}>
+        <Box sx={{ px: { xs: 2, md: 15 } }}>
           <Typography
             variant="h2"
             sx={{
@@ -60,7 +60,7 @@ const Store = () => {
           </Typography>
         </Box>
         <Box
-          sx={{ width: { xs: "150px", md: "300px" }, px: { xs: 0, md: 15 } }}
+          sx={{ width: { xs: "150px", md: "300px" }, px: { xs: 2, md: 15 } }}
         >
           <img src={transProfile} style={{ width: "inherit" }} />
         </Box>
@@ -83,7 +83,13 @@ const Store = () => {
               >
                 {category} skills
               </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: { xs: "center", md: "flex-start" },
+                }}
+              >
                 {products
                   .filter((prod) => prod.category === category)
                   .map((product) => {

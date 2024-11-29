@@ -105,6 +105,7 @@ const ImageText = ({
           justifyContent: "space-around",
           alignItems: "center",
           minHeight: "70vh",
+          px: 4,
           flexDirection: {
             xs: "column",
             md: imagePos === "left" ? "row-reverse" : "row",

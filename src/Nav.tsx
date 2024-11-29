@@ -152,3 +152,66 @@ const Nav = (): JSX.Element => {
 };
 
 export default Nav;
+
+export const MobileNav = () => {
+  const [checked, setChecked] = useState(false);
+  const { pathname } = useLocation();
+
+  const unCheck = () => {
+    setChecked(false);
+  };
+
+  useEffect(() => {
+    unCheck();
+  }, [pathname]);
+
+  return (
+    <>
+      <div
+        className="nav"
+        style={
+          {
+            // border: "1px solid red",
+          }
+        }
+      >
+        {/* {!checked && (
+          <Box sx={{ display: "flex", alignItems: "center", pt: 1 }}>
+            <NavLink
+              sx={{ marginLeft: "20px" }}
+              href={"mailto:alexandercsierra@gmail.com"}
+              isCTA
+            >
+              Hire me
+            </NavLink>
+            <NavLink href={"/cart"} showDot>
+              <CartIcon />
+            </NavLink>
+          </Box>
+        )} */}
+        <input
+          type="checkbox"
+          className="blue"
+          id="menu"
+          onChange={() => setChecked(!checked)}
+          checked={checked}
+          onClick={() => setChecked(!checked)}
+          style={{ display: "none" }}
+        />
+        <label htmlFor="menu" className="icon">
+          <div className="menu"> </div>
+        </label>
+        <nav>
+          <NavLink sx={{ marginLeft: 4 }} href={"/"} isExternal={false}>
+            Home
+          </NavLink>
+          {navLinks.map(({ text, href, isExternal }) => (
+            <NavLink sx={{ marginLeft: 4 }} href={href} isExternal={isExternal}>
+              {text}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </>
+  );
+};
