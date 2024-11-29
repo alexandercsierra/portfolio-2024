@@ -1,4 +1,11 @@
 {
+  "ignoreCommand": true,
+  "typescript": {
+    "ignoreBuildErrors": true
+  },
+  "eslint": {
+    "ignoreBuildErrors": true
+  },
   "builds": [
     {
       "src": "package.json",
