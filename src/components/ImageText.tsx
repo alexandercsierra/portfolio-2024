@@ -143,13 +143,18 @@ const ImageText = ({
                 </Box>
               );
             })}
-            {/* <TextWithBold text={title} /> */}
           </Typography>
           <Box
             sx={{
-              display: { xs: "none", md: "block" },
+              display: {
+                xs: "none",
+                md: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              },
               maxWidth: maxDescriptionWidth,
             }}
+            gap={2}
           >
             <Description desc={description} />
 
