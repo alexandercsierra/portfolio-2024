@@ -10,7 +10,7 @@ const Projects = () => {
         variant={"h2"}
         sx={{ textAlign: "center", my: 4, fontWeight: "800" }}
       >
-        My Work
+        Recent Projects
       </Typography>
       {projectData.map((project, i) => {
         return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { NavLink as Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { accentColor, blue } from "./constants/colors";
+import { accentColor, blue, darkAccent } from "./constants/colors";
 import { resumeLink } from "./constants/otherData";
 import CartIcon from "./components/CartIcon";
 
@@ -24,11 +24,13 @@ export const NavLink = ({
   showDot = false,
   sx = {},
   isExternal = false,
+  hoverStyles = {},
 }: {
   children: React.ReactNode;
   href: string;
   isCTA?: boolean;
   sx?: React.CSSProperties;
+  hoverStyles?: React.CSSProperties;
   showDot?: boolean;
   isExternal?: boolean;
 }): JSX.Element => {
@@ -89,9 +91,10 @@ export const NavLink = ({
 
           fontWeight: "700",
 
-          transition: "color .4s ease", // Add transition
+          transition: ".6s ease", // Add transition
           "&:hover": {
             color: blue,
+            ...hoverStyles,
           },
         }}
       >
@@ -142,6 +145,13 @@ const Nav = (): JSX.Element => {
           sx={{ marginLeft: "20px" }}
           href={"mailto:alexandercsierra@gmail.com"}
           isCTA
+          hoverStyles={{
+            cursor: "pointer",
+            background: darkAccent,
+            color: "white",
+            boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+            borderRadius: "25px",
+          }}
         >
           Hire me
         </NavLink>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import GenericDialog from "../GenericDialog";
-import { NavLink } from "../../Nav";
 import Confetti from "react-dom-confetti";
+import CTA from "../CTA";
 
 const confettiConfig = {
   angle: 90,
@@ -69,7 +69,7 @@ const CheckoutModal = ({
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "flex-start",
+          alignItems: "center",
           width: "100%",
           p: 2,
         }}
@@ -84,13 +84,16 @@ const CheckoutModal = ({
           you're looking for an engineer, shoot me an email and we'll see what
           we can build together. I'm excited to hear from you!
         </Typography>
-        <NavLink
-          sx={{ margin: "20px auto" }}
-          href={"mailto:alexandercsierra@gmail.com"}
-          isCTA
-        >
-          Email me
-        </NavLink>
+        <Box>
+          <CTA
+            href={"mailto:alexandercsierra@gmail.com"}
+            text="Email me"
+            style={{ py: 0.5, mb: 0 }}
+          />
+          <Typography variant={"caption"}>
+            alexandercsierra@gmail.com
+          </Typography>
+        </Box>
       </Box>
     </GenericDialog>
   );
