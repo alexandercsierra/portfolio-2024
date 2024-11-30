@@ -74,7 +74,7 @@ const Description = ({ desc }: { desc: string }) => {
       {desc.split("\n").map((text) => {
         console.log({ text });
         return (
-          <Box sx={{ my: 2 }}>
+          <Box sx={{ my: 1 }}>
             <TextWithBold text={text} />
           </Box>
         );

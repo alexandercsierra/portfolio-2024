@@ -3,24 +3,55 @@ import payment from "../assets/payment copy.png";
 
 export const products = [
   {
-    id: "react",
+    id: "payments",
     name: "End to End Payments",
     image: "stripe",
     subtitle: "Total Stripe integration",
     price: 12.65,
     category: "product",
     description:
-      "I have worked on a payment platform that allows users to pay for services using their credit card. The platform is built using React, Redux, and TypeScript. I have also worked on the backend using Node.js and Express.js. The platform is integrated with Stripe for payment processing. I have also worked on the admin dashboard that allows the admin to view and manage transactions. The platform is deployed on AWS using EC2 and RDS.",
+      "Need to integrate payments into your site? Whether it's Shopify, Stripe, or any other payment platform, I've got you covered.",
   },
+  {
+    id: "ai",
+    name: "AI-Powered Content Generation",
+    image: "stripe",
+    subtitle: "Use LLMs to power your next app",
+    price: 12.65,
+    category: "product",
+    description:
+      "Need to generate content at scale? I've got experience with leveraging LLMs to generate content for your app.",
+  },
+  {
+    id: "react",
+    name: "React",
+    image: "react",
+    subtitle: "Beautiful, responsive frontends",
+    price: 12.65,
+    category: "frontend",
+    description:
+      "State management, custom hooks, and reusable components. I've got the skills to build your next project.",
+  },
+  {
+    id: "jest",
+    name: "Jest",
+    image: "react",
+    subtitle: "Don't wonder if that broke anything",
+    price: 12.65,
+    category: "frontend",
+    description:
+      "Unit testing, integration testing, and snapshot testing. I've got the skills to build your next project.",
+  },
+
   {
     id: "es6",
     name: "ES6",
     image: "es6",
-    subtitle: "()",
+    subtitle: "Modern syntax for modern projects",
     price: 35.25,
     category: "frontend",
     description:
-      "I have worked on a payment platform that allows users to pay for services using their credit card. The platform is built using React, Redux, and TypeScript. I have also worked on the backend using Node.js and Express.js. The platform is integrated with Stripe for payment processing. I have also worked on the admin dashboard that allows the admin to view and manage transactions. The platform is deployed on AWS using EC2 and RDS.",
+      "Modern JavaScript is the foundation of any web project. I've got the skills to build your next project.",
   },
   {
     id: "node",
@@ -30,7 +61,7 @@ export const products = [
     price: 122.65,
     category: "backend",
     description:
-      "I have worked on a payment platform that allows users to pay for services using their credit card. The platform is built using React, Redux, and TypeScript. I have also worked on the backend using Node.js and Express.js. The platform is integrated with Stripe for payment processing. I have also worked on the admin dashboard that allows the admin to view and manage transactions. The platform is deployed on AWS using EC2 and RDS.",
+      "RESTful APIs, authentication, and database management. I've got the skills to build your next project.",
   },
   {
     id: "graphql",
@@ -40,7 +71,7 @@ export const products = [
     price: 54.88,
     category: "backend",
     description:
-      "I have worked on a payment platform that allows users to pay for services using their credit card. The platform is built using React, Redux, and TypeScript. I have also worked on the backend using Node.js and Express.js. The platform is integrated with Stripe for payment processing. I have also worked on the admin dashboard that allows the admin to view and manage transactions. The platform is deployed on AWS using EC2 and RDS.",
+      "Want only some of the data? GraphQL is the answer. I've got the skills to build your next project.",
   },
   {
     id: "typescript",
@@ -50,7 +81,27 @@ export const products = [
     price: 33.99,
     category: "frontend",
     description:
-      "I have worked on a payment platform that allows users to pay for services using their credit card. The platform is built using React, Redux, and TypeScript. I have also worked on the backend using Node.js and Express.js. The platform is integrated with Stripe for payment processing. I have also worked on the admin dashboard that allows the admin to view and manage transactions. The platform is deployed on AWS using EC2 and RDS.",
+      "Once you've used TypeScript, it's hard to go back. I've got the skills to build your next project.",
+  },
+  {
+    id: "mongodb",
+    name: "MongoDB/Mongoose",
+    image: "typescript",
+    subtitle: "Databases you can depend on",
+    price: 33.99,
+    category: "backend",
+    description:
+      "Need a database that can scale with your app? I've got the skills to build your next project.",
+  },
+  {
+    id: "jest",
+    name: "Jest",
+    image: "react",
+    subtitle: "Keeping data flowing smoothly",
+    price: 12.65,
+    category: "backend",
+    description:
+      "Unit testing, integration testing - let's make sure our uptime stays high.",
   },
 ];
 

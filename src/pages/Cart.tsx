@@ -17,6 +17,16 @@ const Cart = () => {
     setOpen(true);
   };
 
+  const totalPrice = cart.reduce((acc, item) => {
+    return acc + item.price;
+  }, 0);
+
+  const taxes = totalPrice * 0.6;
+  const total = totalPrice + taxes;
+  const totalPriceString = totalPrice.toFixed(2);
+  const taxString = taxes.toFixed(2);
+  const totalString = total.toFixed(2);
+
   return (
     <>
       <Box
@@ -75,7 +85,7 @@ const Cart = () => {
             >
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography>Subtotal:</Typography>
-                <Typography>$117.85</Typography>
+                <Typography>${totalPriceString}</Typography>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography>Shipping:</Typography>
@@ -83,11 +93,15 @@ const Cart = () => {
               </Box>
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography>Taxes and Fees:</Typography>
-                <Typography>$34.22</Typography>
+                <Typography>${taxString}</Typography>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Typography>Total:</Typography>
-                <Typography>$151.00</Typography>
+                <Typography sx={{ fontWeight: "bold", fontSize: "1.25rem" }}>
+                  Total:
+                </Typography>
+                <Typography sx={{ fontWeight: "bold", fontSize: "1.25rem" }}>
+                  ${totalString}
+                </Typography>
               </Box>
 
               <CTA

@@ -2,26 +2,20 @@ import { Typography, Button } from "@mui/material";
 import { accentColor } from "../constants/colors";
 import useCart from "../hooks/useCart";
 import { useSelector } from "react-redux";
-import { useSnackbar } from "notistack";
 
 const AddToCartButton = ({
   product,
   buttonSize = "small",
   buttonWidth = "auto",
 }: {
-  product: { name: string; image?: string; price?: number };
+  product: { name: string; image?: string; price?: number; id: string };
   buttonSize?: "small" | "medium" | "large";
   buttonWidth?: string;
 }) => {
-  const { addToCart, removeFromCart } = useCart();
-  const { enqueueSnackbar } = useSnackbar();
+  const { onClickProduct } = useCart();
   const { id } = product;
   const cart = useSelector((state) => state.cart.cart);
   const productInCart = cart.some((item) => item.id === id);
-
-  const snackbarMessage = !productInCart
-    ? `Added ${product.name} to cart`
-    : `Removed ${product.name} from cart`;
 
   return (
     <>
@@ -34,13 +28,7 @@ const AddToCartButton = ({
           textAlign: "center",
           width: buttonWidth,
         }}
-        onClick={(event) => {
-          event.stopPropagation();
-          enqueueSnackbar(snackbarMessage, {
-            variant: productInCart ? "error" : "success",
-          });
-          return productInCart ? removeFromCart(product) : addToCart(product);
-        }}
+        onClick={(e) => onClickProduct(e, product)}
       >
         <Typography
           sx={{
