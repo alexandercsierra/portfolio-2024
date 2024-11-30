@@ -4,7 +4,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import Cart from "./components/Cart.tsx";
+import Cart from "./pages/Cart.tsx";
 import Projects from "./Projects.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./Layout";

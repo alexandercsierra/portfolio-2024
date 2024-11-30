@@ -180,6 +180,19 @@ export const MobileNav = () => {
           <div className="menu"> </div>
         </label>
         <nav>
+          <Box sx={{ display: "flex" }}>
+            <NavLink href={"/cart"} showDot>
+              <CartIcon />
+            </NavLink>
+
+            <NavLink
+              sx={{ marginLeft: "20px" }}
+              href={"mailto:alexandercsierra@gmail.com"}
+              isCTA
+            >
+              Hire me
+            </NavLink>
+          </Box>
           <NavLink sx={{ marginLeft: 4 }} href={"/"} isExternal={false}>
             Home
           </NavLink>
