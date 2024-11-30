@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import GenericDialog from "../GenericDialog";
 import { NavLink } from "../../Nav";
+import Confetti from "react-dom-confetti";
 
+const confettiConfig = {
+  angle: 90,
+  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+  dragFriction: 0.2,
+  duration: 3000,
+  elementCount: 70,
+  height: "10px",
+  spread: 200,
+  stagger: 3,
+  startVelocity: 40,
+  width: "10px",
+  perspective: "500px",
+};
 interface Product {
   name: string;
   image?: string;
@@ -18,14 +33,37 @@ const CheckoutModal = ({
   open: boolean;
   onCancel: () => void;
 }) => {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    let timeout: number | null = null;
+    let timeout2: number | null = null;
+    if (open) {
+      timeout = setTimeout(() => {
+        setShowConfetti(true);
+        timeout2 = setTimeout(() => {
+          setShowConfetti(false);
+        }, 500);
+      }, 500);
+    }
+    return () => {
+      if (timeout) clearTimeout(timeout);
+      if (timeout2) clearTimeout(timeout2);
+    };
+  }, [open]);
   return (
     <GenericDialog
       id={`checkout-modal`}
-      //   title={"Checkout"}
       open={open}
       onCancel={onCancel}
       showCloseButton
+      paperStyles={{
+        overflow: "hidden",
+      }}
     >
+      <Box sx={{ zIndex: 5000, position: "absolute" }}>
+        <Confetti active={showConfetti} config={confettiConfig} />
+      </Box>
       <Box
         sx={{
           display: "flex",
