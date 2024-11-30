@@ -17,7 +17,7 @@ const navLinks = [
   },
 ];
 
-const NavLink = ({
+export const NavLink = ({
   children,
   href,
   isCTA,

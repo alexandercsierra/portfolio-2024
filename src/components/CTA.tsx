@@ -6,13 +6,16 @@ const CTA = ({
   href,
   text,
   style = {},
+  onClick = () => {},
 }: {
   href: string;
   text: string;
   style: React.CSSProperties;
+  onClick: () => void;
 }) => {
   return (
     <Box
+      onClick={onClick}
       sx={{
         background: accentColor,
         color: "white",
