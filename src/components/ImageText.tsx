@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { accentColor, darkAccent } from "../constants/colors";
 import TextWithBold from "./TextWithBold";
 
@@ -104,6 +104,8 @@ const ImageText = ({
   maxTitleWidth?: string;
   imgStyles?: React.CSSProperties;
 }) => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
     <>
       <Box
@@ -113,6 +115,11 @@ const ImageText = ({
           alignItems: "center",
           minHeight: "70vh",
           px: 4,
+          // backgroundColor: "#ffffff",
+
+          // backgroundImage: "radial-gradient(#c4c4c4 1.35px, #ffffff 1.35px)",
+          // backgroundSize: "27px 27px",
+
           flexDirection: {
             xs: "column",
             md: imagePos === "left" ? "row-reverse" : "row",
@@ -125,8 +132,18 @@ const ImageText = ({
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
+            background: "white",
+            p: 5,
+            border: `2px solid ${accentColor}`,
+            borderRadius: "25px",
           }}
         >
+          <Typography
+            variant={"h5"}
+            sx={{ fontWeight: "bold", color: darkAccent }}
+          >
+            Alexander Sierra
+          </Typography>
           <Typography
             variant={"h2"}
             sx={{

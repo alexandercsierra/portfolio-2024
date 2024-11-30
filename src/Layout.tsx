@@ -16,6 +16,7 @@ const RootLayout = () => {
         />
       </head>
       <Box
+        className="cubes"
         sx={{
           minHeight: `calc(100vh - ${footerHeight}px - 15px)`,
           maxWidth: "100%",

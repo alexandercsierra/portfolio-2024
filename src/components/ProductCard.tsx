@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import AddToCartButton from "./AddToCartButton";
 import { productImageMap } from "../constants/productData";
 import useCart from "../hooks/useCart";
+import { lightGrey } from "../constants/colors";
 
 const ProductCard = ({
   product,
@@ -31,6 +32,7 @@ const ProductCard = ({
         alignItems: "center",
         py: 2,
         px: 1,
+        border: `2px solid ${lightGrey}`,
         boxShadow: "none", // Initial state
         transition: "box-shadow .6s ease", // Add transition
         "&:hover": {

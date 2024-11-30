@@ -108,6 +108,7 @@ const Nav = (): JSX.Element => {
   return (
     <Box
       sx={{
+        background: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
