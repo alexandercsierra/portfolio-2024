@@ -20,6 +20,7 @@ const BrowseCTA = ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        mt: 4,
       }}
     >
       <NavLink
@@ -115,10 +116,6 @@ const ImageText = ({
           alignItems: "center",
           minHeight: "70vh",
           px: 4,
-          // backgroundColor: "#ffffff",
-
-          // backgroundImage: "radial-gradient(#c4c4c4 1.35px, #ffffff 1.35px)",
-          // backgroundSize: "27px 27px",
 
           flexDirection: {
             xs: "column",
@@ -134,16 +131,16 @@ const ImageText = ({
             alignItems: "flex-start",
             background: "white",
             p: 5,
-            border: `2px solid ${accentColor}`,
-            borderRadius: "25px",
           }}
         >
-          <Typography
-            variant={"h5"}
-            sx={{ fontWeight: "bold", color: darkAccent }}
-          >
-            Alexander Sierra
-          </Typography>
+          {isHome && (
+            <Typography
+              variant={"h5"}
+              sx={{ fontWeight: "bold", color: darkAccent }}
+            >
+              Alexander Sierra
+            </Typography>
+          )}
           <Typography
             variant={"h2"}
             sx={{
@@ -186,19 +183,20 @@ const ImageText = ({
             alignItems: "center",
           }}
         >
-          <Box sx={{ width: { xs: "300px", md: "500px" } }}>
+          <Box
+            className={isHome ? "purplecubes" : ""}
+            sx={{ width: { xs: "300px", md: "500px" }, borderRadius: "100%" }}
+          >
             <img
               src={imagePath}
               style={{
                 width: "inherit",
                 borderRadius: "80%",
-                // border: "1px solid red",
-                background: accentColor,
                 ...imgStyles,
               }}
             />
           </Box>
-          <Box sx={{ display: { xs: "block", md: "none" } }}>
+          <Box sx={{ display: { xs: "block", md: "none" }, mb: 6 }}>
             <Description desc={description} />
             <BrowseCTA ctaLink={ctaLink} subCtaLink={subCtaLink} />
           </Box>

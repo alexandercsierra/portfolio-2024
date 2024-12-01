@@ -7,7 +7,17 @@ export const products = [
     name: "End to End Payments",
     image: "stripe",
     subtitle: "Total Stripe integration",
-    price: 12.65,
+    price: 99.95,
+    category: "product",
+    description:
+      "Need to integrate payments into your site? Whether it's Shopify, Stripe, or any other payment platform, I've got you covered.",
+  },
+  {
+    id: "analytics",
+    name: "Comprehensive Analytics",
+    image: "stripe",
+    subtitle: "Understand user behavior, experiment and grow",
+    price: 79.95,
     category: "product",
     description:
       "Need to integrate payments into your site? Whether it's Shopify, Stripe, or any other payment platform, I've got you covered.",
@@ -17,7 +27,27 @@ export const products = [
     name: "AI-Powered Content Generation",
     image: "stripe",
     subtitle: "Use LLMs to power your next app",
-    price: 12.65,
+    price: 59.99,
+    category: "product",
+    description:
+      "Need to generate content at scale? I've got experience with leveraging LLMs to generate content for your app.",
+  },
+  {
+    id: "feature",
+    name: "Full Feature Development",
+    image: "stripe",
+    subtitle: "From ideation to deployment",
+    price: 59.99,
+    category: "product",
+    description:
+      "Need to generate content at scale? I've got experience with leveraging LLMs to generate content for your app.",
+  },
+  {
+    id: "google",
+    name: "Google Apps Script",
+    image: "stripe",
+    subtitle: "Manage your data with Google sheets!",
+    price: 38.95,
     category: "product",
     description:
       "Need to generate content at scale? I've got experience with leveraging LLMs to generate content for your app.",
@@ -27,7 +57,17 @@ export const products = [
     name: "React",
     image: "react",
     subtitle: "Beautiful, responsive frontends",
-    price: 12.65,
+    price: 34.65,
+    category: "frontend",
+    description:
+      "State management, custom hooks, and reusable components. I've got the skills to build your next project.",
+  },
+  {
+    id: "redux",
+    name: "Redux",
+    image: "react",
+    subtitle: "State management for the whole family",
+    price: 53.24,
     category: "frontend",
     description:
       "State management, custom hooks, and reusable components. I've got the skills to build your next project.",
@@ -37,7 +77,7 @@ export const products = [
     name: "Jest",
     image: "react",
     subtitle: "Don't wonder if that broke anything",
-    price: 12.65,
+    price: 299.99,
     category: "frontend",
     description:
       "Unit testing, integration testing, and snapshot testing. I've got the skills to build your next project.",
@@ -48,7 +88,7 @@ export const products = [
     name: "ES6",
     image: "es6",
     subtitle: "Modern syntax for modern projects",
-    price: 35.25,
+    price: 42.05,
     category: "frontend",
     description:
       "Modern JavaScript is the foundation of any web project. I've got the skills to build your next project.",
@@ -57,8 +97,8 @@ export const products = [
     id: "node",
     name: "Node JS",
     image: "node",
-    subtitle: "Skills in frontend react",
-    price: 122.65,
+    subtitle: "JS, not just for frontend anymore!",
+    price: 85.68,
     category: "backend",
     description:
       "RESTful APIs, authentication, and database management. I've got the skills to build your next project.",
@@ -77,7 +117,7 @@ export const products = [
     id: "typescript",
     name: "TypeScript",
     image: "typescript",
-    subtitle: "Queries, mutations, resolvers, oh my!",
+    subtitle: "No, any is not a real type",
     price: 33.99,
     category: "frontend",
     description:
@@ -87,18 +127,59 @@ export const products = [
     id: "mongodb",
     name: "MongoDB/Mongoose",
     image: "typescript",
-    subtitle: "Databases you can depend on",
-    price: 33.99,
+    subtitle: "NoSQL, no problem",
+    price: 42.42,
     category: "backend",
     description:
       "Need a database that can scale with your app? I've got the skills to build your next project.",
   },
   {
-    id: "jest",
+    id: "postgres",
+    name: "Postgres",
+    image: "typescript",
+    subtitle: "Sometimes you need a little more structure",
+    price: 64.99,
+    category: "backend",
+    description:
+      "Need a database that can scale with your app? I've got the skills to build your next project.",
+  },
+
+  {
+    id: "jestbackend",
     name: "Jest",
     image: "react",
-    subtitle: "Keeping data flowing smoothly",
-    price: 12.65,
+    subtitle: "Don't break the backend either",
+    price: 77.32,
+    category: "backend",
+    description:
+      "Unit testing, integration testing - let's make sure our uptime stays high.",
+  },
+  {
+    id: "otherproduct",
+    name: "Additional Product Skills",
+    image: "react",
+    subtitle: "Many more upon request",
+    price: 555.55,
+    category: "product",
+    description:
+      "Unit testing, integration testing - let's make sure our uptime stays high.",
+  },
+  {
+    id: "otherfrontend",
+    name: "Additional Frontend Skills",
+    image: "react",
+    subtitle: "Many more upon request",
+    price: 555.55,
+    category: "frontend",
+    description:
+      "Unit testing, integration testing - let's make sure our uptime stays high.",
+  },
+  {
+    id: "otherproduct",
+    name: "Additional Backend Skills",
+    image: "react",
+    subtitle: "Many more upon request",
+    price: 555.55,
     category: "backend",
     description:
       "Unit testing, integration testing - let's make sure our uptime stays high.",
