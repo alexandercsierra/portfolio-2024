@@ -21,6 +21,7 @@ const BrowseCTA = ({
         justifyContent: "center",
         alignItems: "center",
         mt: 4,
+        maxWidth: "100%",
       }}
     >
       <NavLink
@@ -39,7 +40,7 @@ const BrowseCTA = ({
             borderRadius: "25px",
             textTransform: "none",
             fontWeight: "700",
-            width: "300px",
+            width: { xs: "fit-content", md: "300px" },
             px: 6,
             py: 1,
             mb: 1,
@@ -130,7 +131,7 @@ const ImageText = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             background: "white",
-            p: 5,
+            p: { xs: 1, md: 5 },
           }}
         >
           {isHome && (
@@ -147,6 +148,8 @@ const ImageText = ({
               fontWeight: "700",
               textAlign: { xs: "center", md: "left" },
               maxWidth: maxTitleWidth,
+              lineHeight: 1,
+              fontSize: { xs: "3rem", md: "3.75rem" },
             }}
           >
             {title.split("\n").map((text) => {
@@ -181,6 +184,7 @@ const ImageText = ({
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            maxWidth: "100%",
           }}
         >
           <Box
@@ -196,7 +200,16 @@ const ImageText = ({
               }}
             />
           </Box>
-          <Box sx={{ display: { xs: "block", md: "none" }, mb: 6 }}>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mb: 6,
+              maxWidth: "100%",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Description desc={description} />
             <BrowseCTA ctaLink={ctaLink} subCtaLink={subCtaLink} />
           </Box>
