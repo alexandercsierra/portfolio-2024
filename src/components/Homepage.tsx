@@ -9,7 +9,7 @@ const Homepage = () => {
       maxDescriptionWidth="500px"
       title={"Senior **Full Stack** Engineer"}
       description={
-        "Hi, I'm Alex 👋🏻. I've got 4+ years experience working in fast-paced environments on products serving millions of users"
+        "Hi, I'm Alex 👋🏻 — I love writing code that makes an impact. Perpetual learner and keyboard enthusiast (click-clack), I am fueled by curiosity and snacks."
       }
       ctaLink={{
         text: "Browse Skills Shop =>",
