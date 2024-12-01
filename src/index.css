@@ -108,7 +108,7 @@ nav {
 
 /*when menu selected, change the height of nav to 40vh*/
 #menu:checked ~ nav {
-  height: 220px;
+  height: 300px;
 }
 
 .cartIcon {

@@ -15,6 +15,11 @@ const navLinks = [
     href: resumeLink,
     isExternal: true,
   },
+  {
+    text: "LinkedIn",
+    href: "https://www.linkedin.com/in/alexandercsierra",
+    isExternal: true,
+  },
 ];
 
 export const NavLink = ({
