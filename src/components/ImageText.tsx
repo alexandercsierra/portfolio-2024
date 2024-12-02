@@ -188,8 +188,12 @@ const ImageText = ({
           }}
         >
           <Box
-            className={isHome ? "purplecubes" : ""}
-            sx={{ width: { xs: "300px", md: "500px" }, borderRadius: "100%" }}
+            className={isHome ? "purplecubes hover" : "hover"}
+            sx={{
+              width: { xs: "250px", md: "500px" },
+              borderRadius: "100%",
+              mt: 2,
+            }}
           >
             <img
               src={imagePath}
@@ -199,6 +203,18 @@ const ImageText = ({
                 ...imgStyles,
               }}
             />
+          </Box>
+          <Box sx={{ width: { xs: "250px", md: "500px" }, mb: 2 }}>
+            <Box
+              className={"hoverShadow"}
+              sx={{
+                boxShadow: "rgba(0, 0, 0, 0.35) 10px 10px 5px",
+                height: "10px",
+                width: { xs: "300px", md: "500px" },
+                borderRadius: "100%",
+                margin: "0 auto",
+              }}
+            ></Box>
           </Box>
           <Box
             sx={{
