@@ -22,7 +22,6 @@ const CTA = ({
         borderRadius: "25px",
         textTransform: "none",
         fontWeight: "700",
-        width: "300px",
         px: 6,
         py: 1,
         mb: 1,

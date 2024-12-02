@@ -2,12 +2,19 @@ import ProductCard from "./ProductCard";
 import { Box, Typography } from "@mui/material";
 import { products } from "../constants/productData";
 import transProfile from "../assets/transprofile.png";
-import { lightGrey } from "../constants/colors";
+import { accentColor, darkAccent, lightGrey } from "../constants/colors";
+
+import { NavLink } from "../Nav";
+import { useSelector } from "react-redux";
 
 const Store = () => {
   const productCategories = new Set(
     products.map((product) => product.category)
   );
+
+  const cart = useSelector((state) => state.cart.cart);
+
+  const hasSavedProducts = cart?.length > 0;
   return (
     <Box
       sx={{
@@ -68,8 +75,23 @@ const Store = () => {
         </Box>
       </Box>
       <Typography variant="h3" sx={{ fontWeight: "700", mt: 4 }}>
-        Skills
+        Skills Shop
       </Typography>
+      <Typography>real skills, fake prices</Typography>
+
+      <NavLink
+        href="/cart"
+        isCTA
+        sx={{
+          background: "white",
+          color: accentColor,
+          border: `2px solid ${darkAccent}`,
+          visibility: hasSavedProducts ? "visible" : "hidden",
+        }}
+      >
+        checkout now
+      </NavLink>
+
       <Box sx={{ width: "100%" }}>
         {Array.from(productCategories).map((category) => {
           return (

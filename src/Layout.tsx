@@ -17,28 +17,26 @@ const RootLayout = () => {
       </head>
       <Box
         sx={{
-          minHeight: `calc(100vh - ${footerHeight}px - 15px)`,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
           maxWidth: "100%",
           overflowX: "hidden",
         }}
       >
-        <Box sx={{ mb: 2, display: { xs: "none", md: "block" } }}>
+        {/* Nav section */}
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
           <Nav />
         </Box>
         <Box sx={{ mb: "50px", display: { xs: "block", md: "none" } }}>
           <MobileNav />
         </Box>
-        <Box
-          sx={
-            {
-              // px: 6
-            }
-          }
-        >
+        <Box sx={{ flex: 1 }}>
           <Outlet />
         </Box>
+
+        <Footer />
       </Box>
-      <Footer />
     </>
   );
 };

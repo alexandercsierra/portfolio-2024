@@ -62,7 +62,6 @@ export const NavLink = ({
         textDecoration: "none",
 
         textTransform: "none",
-        color: "black",
         height: isCTA ? "30px" : "40px",
         background: isCTA ? accentColor : "",
         borderRadius: isCTA ? "25px" : "",
@@ -71,6 +70,7 @@ export const NavLink = ({
         alignItems: "center",
         cursor: "pointer",
         position: "relative",
+        color: isCTA ? "white" : isCurrentLocation ? accentColor : "black",
 
         ...sx,
       }}
@@ -90,7 +90,7 @@ export const NavLink = ({
       )}
       <Typography
         sx={{
-          color: isCTA ? "white" : isCurrentLocation ? accentColor : "",
+          color: "inherit",
           textTransform: "none",
           paddingX: isCTA ? "25px" : "",
 

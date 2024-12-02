@@ -129,7 +129,7 @@ const ImageText = ({
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            alignItems: "flex-start",
+            alignItems: { xs: "center", md: "flex-start" },
             background: "white",
             p: { xs: 1, md: 5 },
           }}

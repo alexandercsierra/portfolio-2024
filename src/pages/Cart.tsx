@@ -47,6 +47,7 @@ const Cart = () => {
               flexDirection: { xs: "column", md: "row" },
               width: "100%",
               justifyContent: "space-around",
+              alignItems: { xs: "center", md: "flex-start" },
               position: "relative",
             }}
           >
@@ -79,7 +80,7 @@ const Cart = () => {
                 mt: 13,
                 height: "fit-content",
                 borderRadius: "25px",
-
+                width: { xs: "80%", md: "450px" },
                 right: "0",
               }}
             >

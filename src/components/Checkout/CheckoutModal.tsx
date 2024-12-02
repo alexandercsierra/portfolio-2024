@@ -76,19 +76,26 @@ const CheckoutModal = ({
         gap={3}
       >
         <Typography variant={"h4"} sx={{ textAlign: "center", width: "100%" }}>
-          Thank you for your purchase!
+          Thanks for your purchase!
         </Typography>
-        <Typography sx={{}}>
-          If you've gotten this far, thanks for indulging me little skills shop.
-          I'm always looking for new opportunities to learn and grow, so if
-          you're looking for an engineer, shoot me an email and we'll see what
-          we can build together. I'm excited to hear from you!
+        <Typography sx={{ textAlign: "left" }}>
+          If you've gotten this far, thanks for indulging me! I'm always looking
+          for new opportunities to learn and grow, so if you're looking for an
+          engineer, shoot me an email and we'll see what we can build together.
+          I'm excited to hear from you!
         </Typography>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
           <CTA
             href={"mailto:alexandercsierra@gmail.com"}
             text="Email me"
-            style={{ py: 0.5, mb: 0 }}
+            style={{ py: 0.5, mb: 0, width: "90%" }}
           />
           <Typography variant={"caption"}>
             alexandercsierra@gmail.com
