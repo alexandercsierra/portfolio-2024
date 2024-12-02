@@ -12,9 +12,8 @@ const NotFound = () => {
         background: "none",
         borderRadius: "0",
         borderBottomRightRadius: "155px",
-        width: "400px",
       }}
-      alt={"404"}
+      alt={"Scruffy black and white persian cat, blepping"}
       ctaLink={{ text: "Back to home", href: "/" }}
       subCtaLink={{ subText: "Go to store", subHref: "/store" }}
     />

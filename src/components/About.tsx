@@ -19,6 +19,7 @@ const About = () => {
         subHref: "/projects",
       }}
       imgStyles={{ filter: "grayscale(100%)", background: "none" }}
+      alt={"Alex, comically looking left as if he was reading the text"}
     />
   );
 };

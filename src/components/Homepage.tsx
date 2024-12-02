@@ -23,6 +23,7 @@ const Homepage = () => {
           isExternal: true,
         }}
         imagePath={selfie}
+        alt={"Alex wearing a puffy vest, peering into the sunlight"}
       />
       <TestimonialCarousel />
     </>

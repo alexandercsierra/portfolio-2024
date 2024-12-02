@@ -92,6 +92,7 @@ const ImageText = ({
   ctaLink,
   subCtaLink,
   imagePath,
+  alt = "",
   imagePos = "right",
   maxDescriptionWidth = "800px",
   maxTitleWidth = "800px",
@@ -102,6 +103,7 @@ const ImageText = ({
   ctaLink: { text: string; href: string };
   subCtaLink: { subText: string; subHref: string };
   imagePath: string;
+  alt: string;
   imagePos: "left" | "right";
   maxDescriptionWidth?: string;
   maxTitleWidth?: string;
@@ -196,6 +198,7 @@ const ImageText = ({
           >
             <img
               src={imagePath}
+              alt={alt}
               style={{
                 width: "inherit",
                 borderRadius: "80%",
