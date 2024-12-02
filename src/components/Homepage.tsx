@@ -1,4 +1,4 @@
-import selfie from "../assets/transprofile.png";
+import selfie from "../assets/transprofile-min.png";
 import ImageText from "./ImageText";
 import { resumeLink } from "../constants/otherData";
 import TestimonialCarousel from "./Carousel";

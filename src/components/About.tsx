@@ -1,5 +1,5 @@
 import ImageText from "./ImageText";
-import lookingLeft from "../assets/lookingleft.png";
+import lookingLeft from "../assets/lookingleft-min.png";
 
 const About = () => {
   return (

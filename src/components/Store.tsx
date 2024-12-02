@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 import { Box, Typography } from "@mui/material";
 import { products } from "../constants/productData";
-import transProfile from "../assets/transprofile.png";
+import transProfile from "../assets/transprofile-min.png";
 import { accentColor, darkAccent, lightGrey } from "../constants/colors";
 
 import { NavLink } from "../Nav";
