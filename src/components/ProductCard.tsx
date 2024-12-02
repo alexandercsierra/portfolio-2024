@@ -16,7 +16,7 @@ const ProductCard = ({
     id: string;
   };
 }) => {
-  const { name, image, price, subtitle } = product;
+  const { name, image, price, subtitle, category } = product;
   const { onClickProduct } = useCart();
   return (
     <Box
@@ -51,7 +51,7 @@ const ProductCard = ({
           // border: "1px solid red",
         }}
       >
-        <img src={productImageMap[image]} style={{ width: "100px" }} />
+        <img src={productImageMap[category]} style={{ width: "100px" }} />
       </Box>
       <Box
         sx={{

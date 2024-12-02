@@ -43,7 +43,10 @@ const CartItem = ({ item }) => {
           mr: 2,
         }}
       >
-        <img src={productImageMap[item.image]} style={{ width: "inherit" }} />
+        <img
+          src={productImageMap[item.category]}
+          style={{ width: "inherit" }}
+        />
       </Box>
       <Box
         sx={{

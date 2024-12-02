@@ -1,5 +1,7 @@
 import reactProduct from "../assets/react-product.svg";
+import backendProduct from "../assets/backend-product.svg";
 import payment from "../assets/payment copy.png";
+import productProduct from "../assets/product-product.svg";
 
 export const products = [
   {
@@ -189,6 +191,9 @@ export const products = [
 export const productIds = products.map((product) => product.id);
 
 export const productImageMap = {
+  product: productProduct,
+  frontend: reactProduct,
+  backend: backendProduct,
   react: reactProduct,
   es6: reactProduct,
   node: reactProduct,
