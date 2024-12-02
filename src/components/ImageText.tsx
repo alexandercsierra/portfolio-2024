@@ -16,6 +16,7 @@ const BrowseCTA = ({
   return (
     <Box
       sx={{
+        alignSelf: "center",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -115,7 +116,6 @@ const ImageText = ({
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          minHeight: "70vh",
           px: 4,
 
           flexDirection: {
@@ -174,7 +174,6 @@ const ImageText = ({
             gap={2}
           >
             <Description desc={description} />
-
             <BrowseCTA ctaLink={ctaLink} subCtaLink={subCtaLink} />
           </Box>
         </Box>
