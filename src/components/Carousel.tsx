@@ -53,6 +53,14 @@ const TestimonialCarousel = () => {
       color: theme.palette.primary.light,
     },
     {
+      id: 5,
+      name: "Bryan Clark",
+      role: "Product Engineer",
+      content:
+        "Having worked at a number of companies in my career, I can truly say that Alex is one of the finest engineers I've ever worked with. Alex's technical skills, in addition to his drive to solve complex problems, are on par with much more seasoned engineer's from my experience.",
+      color: theme.palette.warning.light,
+    },
+    {
       id: 3,
       name: "Tán Ho",
       role: "Senior Product Designer",
@@ -67,6 +75,14 @@ const TestimonialCarousel = () => {
       content:
         "We often called him a 'clarity creator' because of his intrinsic desire to keep projects, timelines, and high level goals organized across multiple teams, regardless of his role at any point in time. He naturally evolved into a great team lead when needed.",
       color: theme.palette.info.light,
+    },
+    {
+      id: 6,
+      name: "Bryan Clark",
+      role: "Product Engineer",
+      content:
+        "What sets Alex apart is his unique ability to bring clarity to complex situations without dominating the conversation. His thoughtful approach and sharp insights consistently cut through ambiguity, leading our team to pragmatic and effective solutions.",
+      color: theme.palette.warning.light,
     },
   ];
 
