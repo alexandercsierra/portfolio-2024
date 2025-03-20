@@ -101,7 +101,7 @@ const ImageText = ({
   title: string;
   description: string;
   ctaLink: { text: string; href: string };
-  subCtaLink: { subText: string; subHref: string };
+  subCtaLink: { subText: string; subHref: string; isExternal?: boolean };
   imagePath: string;
   alt: string;
   imagePos: "left" | "right";
