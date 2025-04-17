@@ -19,16 +19,7 @@ const Footer = () => {
         py: 4,
       }}
     >
-      <Typography> © Copyright Alexander Sierra 2024</Typography>
-      {/* <Box>
-        <Box sx={{ width: "25%", textAlign: "center" }}>
-          <Typography variant={"h6"}>About Us</Typography>
-          <Typography>About me</Typography>
-        </Box>
-        <Box sx={{ width: "25%", textAlign: "center" }}>asdf</Box>
-        <Box sx={{ width: "25%", textAlign: "center" }}>asdf</Box>
-        <Box sx={{ width: "25%", textAlign: "center" }}>asdf</Box>
-      </Box> */}
+      <Typography> © Copyright Alexander Sierra 2025</Typography>
     </Box>
   );
 };

@@ -1,12 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import fiveablehomepage from "../assets/fiveablehomepage.png";
 import phasmo from "../assets/phasmo.png";
+import algos from "../assets/algoPatterns.png";
 import { NavLink } from "react-router-dom";
 import { accentColor, grey } from "../constants/colors";
 
 const imageMap = {
   fiveable: fiveablehomepage,
   phasmo: phasmo,
+  algos,
 };
 
 const ProjectCard = ({
@@ -31,7 +33,7 @@ const ProjectCard = ({
     <Box
       sx={{
         display: "flex",
-        py: 4,
+        py: 8,
         flexDirection: { xs: "column-reverse", md: flexDirection },
         justifyContent: "center",
         alignItems: "center",

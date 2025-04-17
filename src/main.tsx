@@ -14,22 +14,45 @@ import About from "./components/About.tsx";
 import Store from "./components/Store.tsx";
 import NotFound from "./components/NotFound.tsx";
 import { SnackbarProvider } from "notistack";
+import Testimonials from "./pages/Testimonials.tsx";
+import Contact from "./pages/Contact.tsx";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
       { path: "/", element: <App /> },
-      { path: "/cart", element: <Cart /> },
+      // { path: "/cart", element: <Cart /> },
       { path: "/projects", element: <Projects /> },
+      { path: "/testimonials", element: <Testimonials /> },
       { path: "/resume", element: <Resume /> },
       { path: "/product/:productId", element: <ProductPage /> },
       { path: "/about", element: <About /> },
-      { path: "/store", element: <Store /> },
+      { path: "/contact", element: <Contact /> },
+      // { path: "/store", element: <Store /> },
       { path: "*", element: <NotFound /> },
     ],
   },
 ]);
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#4BB2F9",
+      dark: "#2b668e",
+    },
+    secondary: {
+      main: "#1F2122",
+    },
+    text: {
+      primary: "#E4E4E4",
+    },
+  },
+  typography: {
+    fontFamily: "Nunito,sans-serif",
+  },
+});
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -38,7 +61,9 @@ createRoot(document.getElementById("root")!).render(
       anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
     >
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <ThemeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </Provider>
     </SnackbarProvider>
   </StrictMode>

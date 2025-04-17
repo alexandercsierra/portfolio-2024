@@ -1,14 +1,16 @@
 import ImageText from "./ImageText";
 import lookingLeft from "../assets/lookingleft-min.png";
+import alexCartoon from "../assets/cartoonAlex.png";
+import kirbyHat from "../assets/kirbyhat.png";
 
 const About = () => {
   return (
     <ImageText
-      title={"Who am I, **really**?"}
+      title={"Who am I, **really** ?"}
       description={
-        "Woah, digging **deep** now. Fundamentally I am a person driven by **curiosity and self-improvement**. I want to learn more and be able to do more today than I did yesterday. Professionally that means failure is a learning experience. Accept it, write it down, try not make the same mistake again.\n Personally that means I’m full of **fun**, **useless facts**. Did you know that the reason Roman roads are so durable is because they contain a form of lime that can repair itself? Or that birds migrate through actually seeing the Earth’s magnetic field with their eyes?? **WILD**. Oh, to be hermit in a hut somewhere babbling useless information that no one but me cares about.... but, no, we have to participate in “society”"
+        "I'm a **Software Engineer** with **5** years of experience in the industry building complex, real-world web applications for real users. \n Whether you're a company looking for a full stack dev or a small business looking to build a website, feel free to reach out. Let's see what we can build together!"
       }
-      imagePath={lookingLeft}
+      imagePath={kirbyHat}
       ctaLink={{
         text: "Wanna hire me now?",
         href: "mailto:alexandercsierra@gmail.com",
@@ -18,7 +20,9 @@ const About = () => {
           "No? It was the bird fact, wasn't it? Well, see what else I've done",
         subHref: "/projects",
       }}
-      imgStyles={{ filter: "grayscale(100%)", background: "none" }}
+      imgStyles={{
+        paddingRight: "50px",
+      }}
       alt={"Alex, comically looking left as if he was reading the text"}
     />
   );

@@ -155,7 +155,11 @@ const TestimonialCarousel = () => {
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ fontStyle: "italic", mt: 1, fontSize: ".8rem" }}
+            sx={{
+              fontStyle: "italic",
+              mt: 1,
+              fontSize: { xs: ".8rem", md: "1rem" },
+            }}
           >
             "{testimonials[currentIndex].content}"
           </Typography>

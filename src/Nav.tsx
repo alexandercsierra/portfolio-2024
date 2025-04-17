@@ -7,14 +7,15 @@ import { resumeLink } from "./constants/otherData";
 import CartIcon from "./components/CartIcon";
 
 const navLinks = [
-  { text: "Skills Shop", href: "/store" },
+  // { text: "Skills Shop", href: "/store" },
   { text: "Projects", href: "/projects" },
+  { text: "Testimonials", href: "/testimonials" },
   { text: "About", href: "/about" },
-  {
-    text: "Resume",
-    href: resumeLink,
-    isExternal: true,
-  },
+  // {
+  //   text: "Resume",
+  //   href: resumeLink,
+  //   isExternal: true,
+  // },
   {
     text: "LinkedIn",
     href: "https://www.linkedin.com/in/alexandercsierra",
@@ -122,12 +123,14 @@ const Nav = (): JSX.Element => {
         top: 0,
         position: "sticky",
         zIndex: 1003,
-        margin: 0,
-        px: 2,
+        margin: "0 auto",
+        px: 4,
         py: 1,
+        width: "80%",
+        maxWidth: "1500px",
       }}
     >
-      <NavLink href={"/"}>Alexander Sierra</NavLink>
+      <NavLink href={"/"}>{"< Alex Sierra />"}</NavLink>
       <Box
         gap={6}
         sx={{
@@ -143,13 +146,9 @@ const Nav = (): JSX.Element => {
         ))}
       </Box>
       <Box sx={{ display: "flex" }}>
-        <NavLink href={"/cart"} showDot>
-          <CartIcon />
-        </NavLink>
-
         <NavLink
-          sx={{ marginLeft: "20px" }}
-          href={"mailto:alexandercsierra@gmail.com"}
+          sx={{ marginLeft: "20px", height: "40px" }}
+          href={"/contact"}
           isCTA
           hoverStyles={{
             cursor: "pointer",
@@ -159,7 +158,7 @@ const Nav = (): JSX.Element => {
             borderRadius: "25px",
           }}
         >
-          Hire me
+          contact
         </NavLink>
       </Box>
     </Box>
@@ -196,27 +195,35 @@ export const MobileNav = () => {
           <div className="menu"> </div>
         </label>
         <nav>
-          <Box sx={{ display: "flex" }}>
-            <NavLink href={"/cart"} showDot>
-              <CartIcon />
-            </NavLink>
-
-            <NavLink
-              sx={{ marginLeft: "20px" }}
-              href={"mailto:alexandercsierra@gmail.com"}
-              isCTA
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+              }}
             >
-              Hire me
+              <NavLink href={"mailto:alexandercsierra@gmail.com"} isCTA>
+                Hire me
+              </NavLink>
+            </Box>
+            <NavLink sx={{ marginLeft: 4 }} href={"/"} isExternal={false}>
+              Home
             </NavLink>
+            {navLinks.map(({ text, href, isExternal }) => (
+              <NavLink
+                sx={{ marginLeft: 4 }}
+                href={href}
+                isExternal={isExternal}
+              >
+                {text}
+              </NavLink>
+            ))}
           </Box>
-          <NavLink sx={{ marginLeft: 4 }} href={"/"} isExternal={false}>
-            Home
-          </NavLink>
-          {navLinks.map(({ text, href, isExternal }) => (
-            <NavLink sx={{ marginLeft: 4 }} href={href} isExternal={isExternal}>
-              {text}
-            </NavLink>
-          ))}
         </nav>
       </div>
     </>
