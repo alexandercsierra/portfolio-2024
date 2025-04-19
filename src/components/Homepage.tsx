@@ -13,7 +13,7 @@ const Homepage = () => {
         maxDescriptionWidth="725px"
         title={"**Full Stack** Web Developer"}
         description={
-          "Hi, I'm Alex 👋🏻 — I've got over 5 years of experience developing web applications in HTML/CSS/JavaScript/React/Next.JS/Node. I love writing code that makes an impact. On users, on companies, on the world. Perpetual learner and keyboard enthusiast (clicky-clack), I am fueled by curiosity and the drive to make a difference."
+          "Hi, I'm Alex 👋🏻 — I've got over 5 years of experience developing web applications. I love writing code that makes an impact. On users, on companies, on the world! Checkout some projects I've worked on and if you like what you see, let's chat about how we can build something awesome together."
         }
         ctaLink={{
           text: "See my work",

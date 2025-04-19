@@ -11,7 +11,7 @@ const Projects = () => {
           variant={"h2"}
           sx={{
             textAlign: "center",
-            my: 4,
+            my: { xs: 0, md: 4 },
             fontWeight: "800",
           }}
         >

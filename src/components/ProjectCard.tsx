@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import fiveablehomepage from "../assets/fiveablehomepage.png";
 import phasmo from "../assets/phasmo.png";
 import algos from "../assets/algoPatterns.png";
+import bCard from "../assets/bCard.jpg";
 import { NavLink } from "react-router-dom";
 import { accentColor, grey } from "../constants/colors";
 
@@ -9,6 +10,7 @@ const imageMap = {
   fiveable: fiveablehomepage,
   phasmo: phasmo,
   algos,
+  businessCard: bCard,
 };
 
 const ProjectCard = ({
@@ -42,12 +44,13 @@ const ProjectCard = ({
     >
       <Box
         sx={{
+          lineHeight: "0",
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-          borderRadius: "25px",
-          padding: 2,
-          backgroundColor: backgroundColor || "white",
+          borderRadius: backgroundColor ? "25px" : "none",
+          padding: backgroundColor ? 2 : "",
+          backgroundColor: backgroundColor || "none",
           cursor: "pointer",
-          width: { xs: "400px", md: "600px" },
+          width: { xs: "350px", md: "600px" },
           // boxShadow: "none", // Initial state
           transition: "box-shadow .6s ease", // Add transition
           "&:hover": {
@@ -56,7 +59,13 @@ const ProjectCard = ({
           },
         }}
       >
-        <NavLink to={url} style={{ width: "inherit" }}>
+        <NavLink
+          to={url}
+          style={{
+            width: "inherit",
+          }}
+          target={"_blank"}
+        >
           <img src={imageMap[id]} style={{ width: "inherit" }} />
         </NavLink>
       </Box>
@@ -98,7 +107,14 @@ const ProjectCard = ({
           {descArr.map((desc) => {
             return (
               <li style={{ color: textColor }}>
-                <Typography sx={{ color: textColor }}>{desc}</Typography>
+                <Typography
+                  sx={{
+                    color: textColor,
+                    fontSize: { xs: ".875rem", md: "1rem" },
+                  }}
+                >
+                  {desc}
+                </Typography>
               </li>
             );
           })}
