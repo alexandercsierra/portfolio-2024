@@ -24,7 +24,7 @@ const BrowseCTA = ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: 4,
+        mt: { xs: 0, md: 4 },
         maxWidth: "100%",
       }}
     >
@@ -80,10 +80,10 @@ const Description = ({ desc }: { desc: string }) => {
       {desc.split("\n").map((text) => {
         console.log({ text });
         return (
-          <Box sx={{ my: 1, px: 2 }} key={text}>
+          <Box sx={{ my: 4, px: 2 }} key={text}>
             <Typography
               sx={{
-                fontSize: "1.2rem",
+                fontSize: { xs: ".875rem", md: "1.2rem" },
                 maxWidth: "800px",
                 "@media (max-width: 1200px)": {
                   fontSize: "1rem",
@@ -169,7 +169,7 @@ const ImageText = ({
                   fontSize: "3.2rem",
                 },
                 "@media (max-width: 500px)": {
-                  fontSize: "2.5rem",
+                  fontSize: "2.2rem",
                 },
 
                 textAlign: { xs: "center", md: "left" },
