@@ -6,14 +6,14 @@ import kirbyHat from "../assets/kirbyhat.png";
 const About = () => {
   return (
     <ImageText
-      title={"Who am I, **really** ?"}
+      title={"Who am I, **really**?"}
       description={
-        "I'm a **Software Engineer** with **5** years of experience in the industry building complex, real-world web applications for real users. Primarily using a stack of Next.JS, React, and Node.\n I also love 3D modelling, which I use both as a hobby to create fun images and in a collaborative, graphic design capacity.\n I love unwinding with a good video game or a good book. Whether you're a company looking for a full stack dev or a small business looking to build a website, feel free to reach out. Let's see what we can build together!"
+        "I'm a **Software Engineer** with **5** years of experience in the industry building complex, **real-world** web applications for **real users**. Primarily using a stack of Next.JS, React, and Node. \n I am a **tinkerer** at heart. I love to come up with ideas to optimize little things in life that didn't need it, really. Spend way too much time designing a **3D** model for it, then printing out **iteration after iteration** until it turns out **just right**. I also enjoy winding down with a cozy video game or a good book with my cats **Jasper** and **Cinnamon**."
       }
       imagePath={kirbyHat}
       ctaLink={{
-        text: "Wanna hire me now?",
-        href: "mailto:alexandercsierra@gmail.com",
+        text: "Reviews",
+        href: "/testimonials",
       }}
       subCtaLink={{
         subText:

@@ -4,8 +4,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { accentColor, darkAccent } from "../constants/colors";
 import TextWithBold from "./TextWithBold";
 import FadeTextCarousel from "./FadeTextCarousel";
-import Footer from "./Footer";
-import { footerHeight } from "../constants/otherData";
 
 const BrowseCTA = ({
   ctaLink,
@@ -80,7 +78,7 @@ const Description = ({ desc }: { desc: string }) => {
       {desc.split("\n").map((text) => {
         console.log({ text });
         return (
-          <Box sx={{ my: 4, px: 2 }} key={text}>
+          <Box sx={{ my: { xs: 1, md: 2 }, px: 2 }} key={text}>
             <Typography
               sx={{
                 fontSize: { xs: ".875rem", md: "1.2rem" },
@@ -330,6 +328,7 @@ const ImageText = ({
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                mt: { xs: 4, md: 0 },
               }}
             >
               <Description desc={description} />
