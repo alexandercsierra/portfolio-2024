@@ -1,14 +1,5 @@
-import TestimonialCarousel from "../components/Carousel";
-import {
-  Box,
-  Typography,
-  IconButton,
-  Avatar,
-  Stack,
-  useTheme,
-  styled,
-  Fade,
-} from "@mui/material";
+import { Box, Typography, useTheme, Fade } from "@mui/material";
+import Carousel from "../components/Carousel";
 
 const getTestimonials = (theme) => [
   {
@@ -86,107 +77,7 @@ const Testimonials = () => {
         >
           What do people say about my work?
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          {testimonials.map((test) => {
-            return (
-              <Box
-                sx={{
-                  margin: 2,
-                  background: "#f1f1f1",
-                  borderRadius: "25px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  width: "500px",
-                }}
-              >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      margin: 2,
-                      background: test.color,
-                      p: 2,
-                      borderRadius: "100%",
-                      width: "30px",
-                      height: "30px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography sx={{ fontSize: "2rem", fontWeight: "700" }}>
-                      {test.name.charAt(0)}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography sx={{ lineHeight: ".2rem", fontSize: "1rem" }}>
-                      {test.name}
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      sx={{ fontSize: ".875rem" }}
-                      color="text.secondary"
-                    >
-                      {test.role}
-                    </Typography>
-                  </Box>
-                </Box>
-                <Typography
-                  sx={{
-                    fontSize: { xs: ".8rem", md: "1.2rem" },
-                    maxWidth: "500px",
-                    px: 4,
-                    pb: 4,
-                  }}
-                >
-                  "{test.content}"
-                </Typography>
-                {/* <Stack direction="row" spacing={1} alignItems="center">
-              <Avatar
-              sx={{
-                bgcolor: test.color,
-                width: 20,
-                height: 20,
-                alignSelf: "flex-start",
-                fontSize: ".8rem",
-                }}
-                >
-                {test.name.charAt(0)}
-                </Avatar>
-                <Box>
-                <Typography sx={{ lineHeight: ".2rem", fontSize: ".8rem" }}>
-                {test.name}
-                </Typography>
-                <Typography
-                variant="caption"
-                sx={{ fontSize: ".7rem" }}
-                color="text.secondary"
-                >
-                {test.role}
-                </Typography>
-                </Box>
-                </Stack>
-                <Typography
-                sx={{
-                    mt: 1,
-                    fontSize: { xs: ".8rem", md: "1rem" },
-                    border: "1px solid red",
-                    maxWidth: "500px",
-                    }}
-                    >
-                    "{test.content}"
-                    </Typography> */}
-              </Box>
-            );
-          })}
-        </Box>
+        <Carousel />
       </Box>
     </Fade>
   );

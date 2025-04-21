@@ -1,17 +1,10 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  IconButton,
-  Avatar,
-  Stack,
-  useTheme,
-  styled,
-} from "@mui/material";
+import { Box, IconButton, Stack, useTheme, styled } from "@mui/material";
 import {
   NavigateNext as NavigateNextIcon,
   NavigateBefore as NavigateBeforeIcon,
 } from "@mui/icons-material";
+import Testimonial from "./Testimonial";
 
 // Custom styled dot component
 const DotIndicator = styled("button")(({ theme, active }) => ({
@@ -122,47 +115,15 @@ const TestimonialCarousel = () => {
       <Box
         sx={{
           position: "relative",
-          minHeight: 90,
+          minHeight: "350px",
           margin: "0 auto",
         }}
       >
         <Stack>
-          <Stack direction="row" spacing={1} alignItems="center">
-            <Avatar
-              sx={{
-                bgcolor: testimonials[currentIndex].color,
-                width: 20,
-                height: 20,
-                alignSelf: "flex-start",
-                fontSize: ".8rem",
-              }}
-            >
-              {testimonials[currentIndex].name.charAt(0)}
-            </Avatar>
-            <Box gap={0}>
-              <Typography sx={{ lineHeight: ".2rem", fontSize: ".8rem" }}>
-                {testimonials[currentIndex].name}
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{ fontSize: ".7rem" }}
-                color="text.secondary"
-              >
-                {testimonials[currentIndex].role}
-              </Typography>
-            </Box>
-          </Stack>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{
-              fontStyle: "italic",
-              mt: 1,
-              fontSize: { xs: ".8rem", md: "1rem" },
-            }}
-          >
-            "{testimonials[currentIndex].content}"
-          </Typography>
+          <Testimonial
+            test={testimonials[currentIndex]}
+            key={testimonials[currentIndex].id}
+          />
         </Stack>
       </Box>
 
