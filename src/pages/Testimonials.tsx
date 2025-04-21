@@ -121,17 +121,17 @@ const Testimonials = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Typography sx={{ fontSize: "1.2rem", fontWeight: "700" }}>
+                    <Typography sx={{ fontSize: "2rem", fontWeight: "700" }}>
                       {test.name.charAt(0)}
                     </Typography>
                   </Box>
                   <Box>
-                    <Typography sx={{ lineHeight: ".2rem", fontSize: ".8rem" }}>
+                    <Typography sx={{ lineHeight: ".2rem", fontSize: "1rem" }}>
                       {test.name}
                     </Typography>
                     <Typography
                       variant="caption"
-                      sx={{ fontSize: ".7rem" }}
+                      sx={{ fontSize: ".875rem" }}
                       color="text.secondary"
                     >
                       {test.role}
@@ -140,10 +140,10 @@ const Testimonials = () => {
                 </Box>
                 <Typography
                   sx={{
-                    mt: 1,
                     fontSize: { xs: ".8rem", md: "1.2rem" },
                     maxWidth: "500px",
-                    p: 2,
+                    px: 4,
+                    pb: 4,
                   }}
                 >
                   "{test.content}"

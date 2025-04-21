@@ -202,7 +202,7 @@ const ImageText = ({
                   gap: 4,
                 }}
               >
-                <NavLink to={ctaLink.href}>
+                <NavLink to={ctaLink.href} style={{ textDecoration: "none" }}>
                   <Box
                     sx={{
                       background: accentColor,
@@ -230,7 +230,10 @@ const ImageText = ({
                     {ctaLink.text}
                   </Box>
                 </NavLink>
-                <NavLink to={ctaLink.href} style={{ textDecoration: "none" }}>
+                <NavLink
+                  to={"mailto:alexandercsierra@gmail.com"}
+                  style={{ textDecoration: "none" }}
+                >
                   <Box
                     sx={{
                       // background: accentColor,

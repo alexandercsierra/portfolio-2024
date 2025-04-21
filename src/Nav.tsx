@@ -148,7 +148,7 @@ const Nav = (): JSX.Element => {
       <Box sx={{ display: "flex" }}>
         <NavLink
           sx={{ marginLeft: "20px", height: "40px" }}
-          href={"/contact"}
+          href={"mailto:alexandercsierra@gmail.com"}
           isCTA
           hoverStyles={{
             cursor: "pointer",
@@ -207,8 +207,12 @@ export const MobileNav = () => {
                 display: "flex",
               }}
             >
-              <NavLink href={"mailto:alexandercsierra@gmail.com"} isCTA>
-                Hire me
+              <NavLink
+                href={"mailto:alexandercsierra@gmail.com"}
+                isCTA
+                sx={{ marginBottom: "10px" }}
+              >
+                Contact me
               </NavLink>
             </Box>
             <NavLink sx={{ marginLeft: 4 }} href={"/"} isExternal={false}>

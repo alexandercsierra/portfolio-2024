@@ -29,6 +29,10 @@ const CTA = ({
         justifyContent: "center",
         alignItems: "center",
         transition: ".6s ease",
+        textDecoration: "none",
+        "&:active": {
+          textDecoration: "none",
+        },
         "&:hover": {
           cursor: "pointer",
           background: darkAccent,
@@ -43,7 +47,7 @@ const CTA = ({
         style={{
           color: "inherit",
           textAlign: "center",
-          textDecoration: "none",
+          textDecoration: "none !important",
           padding: "inherit",
         }}
       >
