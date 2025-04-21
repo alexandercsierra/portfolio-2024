@@ -21,6 +21,7 @@ const ProjectCard = ({
   rowBackgroundColor = "",
   flexDirection = "row",
   descArr = [],
+  isFirst,
 }: {
   title: string;
   id: string;
@@ -29,13 +30,15 @@ const ProjectCard = ({
   flexDirection?: string;
   descArr?: string[];
   rowBackgroundColor?: string;
+  isFirst: boolean;
 }) => {
   const textColor = rowBackgroundColor === accentColor ? "white" : "black";
   return (
     <Box
       sx={{
         display: "flex",
-        py: 8,
+        py: { xs: 4, md: 8 },
+        pt: isFirst ? 0 : { xs: 4, md: 8 },
         flexDirection: { xs: "column-reverse", md: flexDirection },
         justifyContent: "center",
         alignItems: "center",

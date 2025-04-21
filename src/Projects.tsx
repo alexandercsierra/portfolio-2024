@@ -20,6 +20,7 @@ const Projects = () => {
         {projectData.map((project, i) => {
           return (
             <ProjectCard
+              isFirst={i === 0}
               flexDirection={i % 2 === 0 ? "row" : "row-reverse"}
               rowBackgroundColor={i % 2 === 0 ? "white" : accentColor}
               {...project}

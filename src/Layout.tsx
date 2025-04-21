@@ -1,10 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Nav, { MobileNav } from "./Nav";
 import { Box } from "@mui/material";
 import Footer from "./components/Footer";
-import { footerHeight } from "./constants/otherData";
+import { useEffect } from "react";
 
 const RootLayout = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <head>

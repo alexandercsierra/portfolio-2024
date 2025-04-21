@@ -20,7 +20,7 @@ export const Testimonial = ({
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        width: "500px",
+        width: { xs: "90%", md: "500px" },
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -30,14 +30,16 @@ export const Testimonial = ({
             background: test.color,
             p: 2,
             borderRadius: "100%",
-            width: "30px",
-            height: "30px",
+            width: { xs: "15px", md: "30px" },
+            height: { xs: "15px", md: "30px" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Typography sx={{ fontSize: "2rem", fontWeight: "700" }}>
+          <Typography
+            sx={{ fontSize: { xs: "1.5rem", md: "2rem" }, fontWeight: "700" }}
+          >
             {test.name.charAt(0)}
           </Typography>
         </Box>
