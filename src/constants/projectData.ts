@@ -20,10 +20,9 @@ export const projectData = [
     title: "Algo Patterns",
     url: "https://algo-patterns-tau.vercel.app/",
     descArr: [
-      "The Software Engineer's study buddy for learning algorithm patterns on the",
-      "Built with React",
-      "Complex logical state management",
-      "Responsive design",
+      "The Software Engineer's study buddy for learning algorithm patterns on the go",
+      "Mobile first design",
+      "Quiz interface with clear progression",
     ],
     description:
       "Phasmo Buddy is a web app that helps players of the game Phasmophobia track their evidence and ghost hunting progress. The app is built using React, Redux, and TypeScript. The app is integrated with Firebase for user authentication and data storage. I have also worked on the backend using Node.js and Express.js. The app is deployed on Vercel.",
